@@ -52,11 +52,11 @@ export default function Header() {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-snow/95 backdrop-blur-md py-4'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 backdrop-blur-md py-4 border-b border-gray-100'}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 z-20 cursor-pointer">
-            <div className="logo-icon w-10 h-10 bg-gradient-to-r from-earth-green to-deep-teal rounded-md flex items-center justify-center text-white font-bold text-xl shadow-md">
+            <div className="logo-icon w-10 h-10 bg-earth-green rounded-md flex items-center justify-center text-white font-bold text-xl shadow-sm">
               Ex
             </div>
             <div className="font-heading font-bold text-xl text-charcoal">
@@ -71,7 +71,7 @@ export default function Header() {
                   <li key={index} className={`${link.isDropdown ? "relative group" : ""}`}>
                     <Link 
                       href={link.href}
-                      className="inline-flex items-center font-medium text-slate hover:text-earth-green transition-colors duration-200 cursor-pointer py-2 px-1 relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-earth-green after:transition-all after:duration-300"
+                      className="inline-flex items-center font-medium text-slate hover:text-earth-green transition-colors duration-200 cursor-pointer py-2 px-1 relative"
                     >
                       {link.label}
                       {link.isDropdown && (
@@ -111,7 +111,7 @@ export default function Header() {
               </svg>
             </button>
 
-            <Link href="/get-started" className="hidden md:inline-flex items-center justify-center btn btn-primary btn-sm cursor-pointer">
+            <Link href="/get-started" className="hidden md:inline-flex items-center justify-center rounded-full bg-earth-green hover:bg-earth-green-dark text-white font-medium py-2 px-5 transition-colors duration-200 cursor-pointer">
               Get Started
             </Link>
 
@@ -169,7 +169,7 @@ export default function Header() {
                 </Link>
               )
             ))}
-            <Link href="/get-started" className="flex items-center justify-center w-full btn btn-primary mt-3 cursor-pointer">
+            <Link href="/get-started" className="flex items-center justify-center w-full rounded-full bg-earth-green text-white font-medium py-3 px-5 mt-3 hover:bg-earth-green-dark transition-colors duration-200 cursor-pointer">
               Get Started
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -194,7 +194,7 @@ export default function Header() {
                   autoFocus={isSearchOpen}
                 />
               </div>
-              <button type="submit" className="ml-2 btn btn-primary cursor-pointer">
+              <button type="submit" className="ml-2 rounded-full bg-earth-green hover:bg-earth-green-dark text-white font-medium py-3 px-5 transition-colors duration-200 cursor-pointer">
                 Search
               </button>
               <button

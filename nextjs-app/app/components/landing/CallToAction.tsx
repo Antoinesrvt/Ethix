@@ -16,13 +16,13 @@ export default function CallToAction() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/get-started" className="btn bg-white text-earth-green hover:bg-light-gray">
+            <Link href="/products" className="btn bg-white text-earth-green hover:bg-light-gray">
               Get Started
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 icon" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </Link>
-            <Link href="/how-it-works" className="btn border border-white/30 text-white hover:bg-white/10">
+            <Link href="/methodology" className="btn border border-white/30 text-white hover:bg-white/10">
               Learn More
             </Link>
           </div>

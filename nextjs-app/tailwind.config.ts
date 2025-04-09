@@ -91,6 +91,7 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'shimmer': 'shimmer 3s infinite',
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'expand-x': 'expandX 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards',
       },
       keyframes: {
         fadeInUp: {
@@ -108,6 +109,10 @@ export default {
         pulse: {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.05)' },
+        },
+        expandX: {
+          '0%': { transform: 'scaleX(0)' },
+          '100%': { transform: 'scaleX(1)' },
         },
       },
       transitionProperty: {
