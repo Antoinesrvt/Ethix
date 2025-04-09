@@ -2,14 +2,14 @@ import "./globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing, toPlainText } from "next-sanity";
 import { Toaster } from "sonner";
 
 import DraftModeToast from "@/app/components/DraftModeToast";
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
+import Footer from "@/app/components/landing/Footer";
+import Header from "@/app/components/landing/Header";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
@@ -57,6 +57,12 @@ const inter = Inter({
   display: "swap",
 });
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export default async function RootLayout({
   children,
 }: {
@@ -65,9 +71,9 @@ export default async function RootLayout({
   const { isEnabled: isDraftMode } = await draftMode();
 
   return (
-    <html lang="en" className={`${inter.variable} bg-white text-black`}>
-      <body>
-        <section className="min-h-screen pt-24">
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+      <body className="bg-snow text-charcoal font-sans min-h-screen overflow-x-hidden flex flex-col">
+        <section className="min-h-screen flex flex-col flex-grow pt-24">
           {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
           <Toaster />
           {isDraftMode && (
@@ -80,7 +86,7 @@ export default async function RootLayout({
           {/* The <SanityLive> component is responsible for making all sanityFetch calls in your application live, so should always be rendered. */}
           <SanityLive onError={handleError} />
           <Header />
-          <main className="">{children}</main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </section>
         <SpeedInsights />
