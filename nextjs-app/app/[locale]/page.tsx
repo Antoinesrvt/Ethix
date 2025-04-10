@@ -1,25 +1,38 @@
 import { Suspense } from "react";
 import { initServerTranslations } from "@/i18n/init";
-import { defaultLocale } from "@/i18n";
+import { locales } from "@/i18n";
 
-import Hero from "./components/landing/Hero";
-import Features from "./components/landing/Features";
-import Testimonials from "./components/landing/Testimonials";
-import ImpactMetrics from "./components/landing/ImpactMetrics";
-import CallToAction from "./components/landing/CallToAction";
+import Hero from "../components/landing/Hero";
+import Partners from "../components/landing/Partners";
+import Features from "../components/landing/Features";
+import Testimonials from "../components/landing/Testimonials";
+import ImpactMetrics from "../components/landing/ImpactMetrics";
+import CallToAction from "../components/landing/CallToAction";
 import { AllPosts } from "@/app/components/Posts";
 
+// Type definition for page props
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
 /**
- * Home page component without locale-based routing
+ * Home page component
  */
-export default async function HomePage() {
-  // Initialize translations with default locale
-  await initServerTranslations(defaultLocale);
+export default async function Home({ params }: Props) {
+  // Extract and validate locale
+  const resolvedParams = await params;
+  const { locale } = resolvedParams;
+  
+  // Initialize translations for this page
+  await initServerTranslations(locale);
   
   return (
     <>
       {/* Hero Section */}
       <Hero />
+      
+      {/* Partners Section */}
+      {/* <Partners /> */}
       
       {/* Features Section */}
       <Features />
@@ -52,4 +65,4 @@ export default async function HomePage() {
       <CallToAction />
     </>
   );
-}
+} 

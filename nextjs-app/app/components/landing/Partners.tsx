@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import LocalizedLink from '@/components/LocalizedLink';
 
 // Note: These are placeholder arrays. In a production environment, 
 // you would likely fetch this data from your Sanity backend
@@ -84,18 +87,31 @@ const certifications = [
 ];
 
 export default function Partners() {
+  // Use the useTranslation hook for client components
+  const { t } = useTranslation();
+  
+  // Get translations
+  const industryBadge = t('partners.industry_badge');
+  const title = t('partners.title');
+  const subtitle = t('partners.subtitle');
+  const certificationTitle = t('partners.certification_title');
+  const certificationSubtitle = t('partners.certification_subtitle');
+  const seeAll = t('partners.see_all');
+  
   return (
     <section className="py-14 bg-light-gray/30 border-y border-light-gray relative overflow-hidden">
       <div className="absolute inset-0 bg-pattern-dots opacity-5"></div>
       
       <div className="container relative">
         <div className="text-center mb-12">
-          <span className="inline-block px-3 py-1 text-xs font-medium bg-warm-sand text-clay rounded-full mb-3">Industry Recognition</span>
+          <span className="inline-block px-3 py-1 text-xs font-medium bg-warm-sand text-clay rounded-full mb-3">
+            {industryBadge}
+          </span>
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3 text-charcoal">
-            Trusted by Leading Brands & Organizations
+            {title}
           </h2>
           <p className="text-slate max-w-2xl mx-auto">
-            We collaborate with forward-thinking brands and certification bodies to promote transparency and sustainability in consumer choices
+            {subtitle}
           </p>
         </div>
         
@@ -118,16 +134,16 @@ export default function Partners() {
         <div className="border-t border-light-gray pt-12">
           <div className="text-center mb-8">
             <h3 className="font-heading text-xl font-bold text-charcoal mb-3">
-              Certification Partners
+              {certificationTitle}
             </h3>
             <p className="text-slate text-sm max-w-2xl mx-auto">
-              We work with these certification standards to validate environmental and social claims
+              {certificationSubtitle}
             </p>
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {certifications.map((cert, index) => (
-              <Link 
+              <LocalizedLink 
                 key={index} 
                 href={`/certifications/${cert.name.toLowerCase().replace(/\s+/g, '-')}`}
                 className="group"
@@ -143,17 +159,17 @@ export default function Partners() {
                     {cert.name}
                   </div>
                 </div>
-              </Link>
+              </LocalizedLink>
             ))}
           </div>
           
           <div className="flex justify-center mt-8">
-            <Link href="/partners" className="text-earth-green hover:text-earth-green-dark flex items-center gap-1 text-sm font-medium transition-colors duration-200">
-              See all our partners
+            <LocalizedLink href="/partners" className="text-earth-green hover:text-earth-green-dark flex items-center gap-1 text-sm font-medium transition-colors duration-200">
+              {seeAll}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-            </Link>
+            </LocalizedLink>
           </div>
         </div>
       </div>

@@ -4,7 +4,24 @@ import Head from "next/head";
 import PageBuilderPage from "@/app/components/template/PageBuilder";
 import { sanityFetch } from "@/sanity/lib/live";
 import { getPageQuery, pagesSlugs } from "@/sanity/lib/queries";
-import { GetPageQueryResult } from "@/sanity.types";
+// Define the page data type based on what the query returns
+type PageData = {
+  _id?: string;
+  _type?: string;
+  name?: string;
+  heading?: string;
+  subheading?: string;
+  slug?: { current: string };
+  pageBuilder?: Array<any>;
+  localizedContent?: {
+    en?: {
+      name?: string;
+      heading?: string;
+      subheading?: string;
+    };
+    fr?: any;
+  };
+};
 import { PageOnboarding } from "@/app/components/template/Onboarding";
 
 type Props = {
@@ -77,7 +94,7 @@ export default async function Page(props: Props) {
           </div>
         </div>
       </div>
-      <PageBuilderPage page={page as GetPageQueryResult} />
+      <PageBuilderPage page={page} />
     </div>
   );
 }

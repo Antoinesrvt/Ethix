@@ -1,4 +1,26 @@
+import { t } from '@/i18n/server';
+import LocalizedLink from '@/components/LocalizedLink';
+import NewsletterForm from './NewsletterForm';
+
 export default function Footer() {
+  const year = new Date().getFullYear();
+  
+  // Navigation columns
+  const footerColumns = [
+    {
+      key: 'explore',
+      links: ['categories', 'brands', 'resources', 'european', 'community']
+    },
+    {
+      key: 'about',
+      links: ['mission', 'methodology', 'data', 'team', 'partners']
+    },
+    {
+      key: 'support',
+      links: ['contact', 'faqs', 'suggest', 'report', 'feedback']
+    }
+  ];
+  
   return (
     <footer className="bg-snow border-t border-light-gray pt-16 pb-8">
       <div className="container">
@@ -13,7 +35,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-slate max-w-sm mb-6">
-              Empowering consumers with transparent information about environmental and social impacts to guide better purchasing decisions.
+              {t('footer.about_description')}
             </p>
             <div className="flex gap-4 mb-6">
               <a href="#" className="text-slate hover:text-earth-green transition-colors" aria-label="Twitter">
@@ -39,86 +61,58 @@ export default function Footer() {
             </div>
             <div className="hidden md:block">
               <div className="flex items-center gap-2 text-sm bg-light-gray p-3 rounded-lg">
-                <span className="text-slate">Join our newsletter:</span>
-                <form className="flex flex-1">
-                  <input 
-                    type="email" 
-                    placeholder="Your email" 
-                    className="px-3 py-2 text-sm flex-1 border border-light-gray rounded-l-md focus:outline-none focus:ring-1 focus:ring-earth-green"
-                  />
-                  <button type="submit" className="bg-earth-green hover:bg-earth-green-dark text-white px-4 py-2 text-sm font-medium rounded-r-md transition-colors">
-                    Subscribe
-                  </button>
-                </form>
+                <span className="text-slate">{t('footer.newsletter.join')}</span>
+                <NewsletterForm />
               </div>
             </div>
           </div>
           
-          <div>
-            <h5 className="font-heading font-bold text-charcoal mb-4">Explore</h5>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Impact Categories</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Sustainable Brands</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Educational Resources</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">European Products</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Community Forum</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h5 className="font-heading font-bold text-charcoal mb-4">About</h5>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Our Mission</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Methodology</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Data Sources</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Our Team</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Partners</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h5 className="font-heading font-bold text-charcoal mb-4">Support</h5>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">FAQs</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Suggest a Product</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Report an Issue</a></li>
-              <li><a href="#" className="text-slate hover:text-earth-green transition-colors">Feedback</a></li>
-            </ul>
-          </div>
+          {footerColumns.map(column => (
+            <div key={column.key}>
+              <h5 className="font-heading font-bold text-charcoal mb-4">
+                {t(`footer.columns.${column.key}.title`)}
+              </h5>
+              <ul className="space-y-2">
+                {column.links.map(link => (
+                  <li key={link}>
+                    <a href="#" className="text-slate hover:text-earth-green transition-colors">
+                      {t(`footer.columns.${column.key}.links.${link}`)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         
         {/* Mobile newsletter subscription */}
         <div className="md:hidden mb-8">
           <div className="bg-light-gray p-4 rounded-lg">
-            <h5 className="font-heading font-bold text-charcoal mb-2">Stay Updated</h5>
-            <p className="text-slate text-sm mb-3">Join our newsletter for the latest on sustainable products and ethical choices.</p>
-            <form className="flex flex-col gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="px-3 py-2 text-sm border border-light-gray rounded-md focus:outline-none focus:ring-1 focus:ring-earth-green"
-              />
-              <button type="submit" className="bg-earth-green hover:bg-earth-green-dark text-white px-4 py-2 text-sm font-medium rounded-md transition-colors">
-                Subscribe
-              </button>
-            </form>
+            <h5 className="font-heading font-bold text-charcoal mb-2">{t('footer.newsletter.stay_updated')}</h5>
+            <p className="text-slate text-sm mb-3">{t('footer.newsletter.description')}</p>
+            <NewsletterForm isMobile={true} />
           </div>
         </div>
         
         <div className="border-t border-light-gray pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate">
-          <p>© {new Date().getFullYear()} ChooseBetter. All rights reserved.</p>
+          <p>© {year} ChooseBetter. {t('footer.rights_reserved')}</p>
           <div className="flex flex-col md:flex-row items-center gap-4 mt-4 md:mt-0">
             <div className="flex items-center gap-4">
-              <a href="#" className="text-slate hover:text-earth-green transition-colors">Privacy Policy</a>
-              <a href="#" className="text-slate hover:text-earth-green transition-colors">Terms of Service</a>
-              <a href="#" className="text-slate hover:text-earth-green transition-colors">Cookie Policy</a>
+              <a href="#" className="text-slate hover:text-earth-green transition-colors">
+                {t('footer.policies.privacy')}
+              </a>
+              <a href="#" className="text-slate hover:text-earth-green transition-colors">
+                {t('footer.policies.terms')}
+              </a>
+              <a href="#" className="text-slate hover:text-earth-green transition-colors">
+                {t('footer.policies.cookies')}
+              </a>
             </div>
             <span className="flex items-center gap-1">
               <div className="w-4 h-4 rounded-full bg-eu-blue flex items-center justify-center">
                 <span className="text-eu-gold text-[8px]">★</span>
               </div>
-              Made in Europe
+              {t('footer.powered_by')} Sanity
             </span>
           </div>
         </div>

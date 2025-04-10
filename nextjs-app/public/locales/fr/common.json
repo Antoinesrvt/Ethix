@@ -1,0 +1,474 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "products": "Produits",
+    "impact_data": "Données d'impact",
+    "learn": "Apprendre",
+    "community": "Communauté",
+    "about": "À propos",
+    "get_started": "Commencer",
+    "search": "Rechercher",
+    "cancel": "Annuler"
+  },
+  "products_categories": {
+    "all_products": "Tous les produits",
+    "personal_care": "Soins personnels",
+    "home": "Maison",
+    "fashion": "Mode"
+  },
+  "search": {
+    "placeholder": "Rechercher des produits, marques ou sujets...",
+    "popular_searches": "RECHERCHES POPULAIRES :",
+    "eco_friendly": "Produits écologiques",
+    "sustainable_fashion": "Mode durable",
+    "fair_trade": "Commerce équitable",
+    "carbon_neutral": "Neutralité carbone"
+  },
+  "hero": {
+    "platform_badge": "Plateforme de Consommation Éthique",
+    "title": "Faites des choix <em>Éthiques</em> pour un <em>Meilleur</em> Avenir",
+    "subtitle": "Accédez à des données d'impact transparentes sur les produits pour faire des choix éclairés et éthiques qui correspondent à vos valeurs.",
+    "start_exploring": "Commencer l'exploration",
+    "how_it_works": "Comment ça marche",
+    "features": {
+      "products": "Plus de 10 000 produits",
+      "metrics": "Multiples métriques d'impact",
+      "data": "Sources de données vérifiées"
+    }
+  },
+  "features": {
+    "title": "Vous donner le pouvoir de faire de <em>Meilleurs Choix</em>",
+    "subtitle": "Notre plateforme fournit les outils et les informations dont vous avez besoin pour aligner vos décisions d'achat avec vos valeurs.",
+    "items": {
+      "data": {
+        "title": "Données Transparentes",
+        "description": "Accédez à des mesures complètes d'impact environnemental et social pour les produits, facilitant ainsi les décisions éclairées."
+      },
+      "comparisons": {
+        "title": "Comparaisons Éthiques",
+        "description": "Comparez des produits similaires côte à côte en fonction de leurs mesures de durabilité et de leurs évaluations éthiques."
+      },
+      "alternatives": {
+        "title": "Suggestions d'Alternatives",
+        "description": "Découvrez des alternatives plus durables et éthiques aux produits que vous envisagez d'acheter."
+      },
+      "insights": {
+        "title": "Avis de la Communauté",
+        "description": "Bénéficiez des avis et commentaires des utilisateurs axés sur les aspects éthiques et de durabilité des produits."
+      },
+      "recommendations": {
+        "title": "Recommandations Personnalisées",
+        "description": "Recevez des recommandations de produits adaptées en fonction de vos priorités et valeurs éthiques."
+      },
+      "resources": {
+        "title": "Ressources Éducatives",
+        "description": "Accédez à des guides et des articles pour vous aider à comprendre les critères de durabilité et à faire de meilleurs choix."
+      }
+    },
+    "coming_soon": "Plus de fonctionnalités à venir bientôt !"
+  },
+  "testimonials": {
+    "title": "Ce que dit notre <em>Communauté</em>",
+    "subtitle": "Rejoignez des milliers de personnes qui prennent des décisions d'achat plus conscientes grâce à notre plateforme.",
+    "items": [
+      {
+        "quote": "ChooseBetter a complètement changé ma façon de faire mes achats. Je peux maintenant facilement trouver des produits qui correspondent à mes valeurs environnementales.",
+        "name": "Sophie Martinez",
+        "title": "Défenseure de la durabilité"
+      },
+      {
+        "quote": "Je cherchais un outil comme celui-ci depuis des années. Les métriques d'impact facilitent la comparaison des produits et la prise de meilleures décisions.",
+        "name": "David Chen",
+        "title": "Consommateur conscient"
+      },
+      {
+        "quote": "En tant que personne soucieuse de la production éthique, cette plateforme a été inestimable pour m'aider à soutenir les entreprises aux pratiques de travail équitables.",
+        "name": "Aisha Johnson",
+        "title": "Passionnée d'achats éthiques"
+      }
+    ],
+    "trusted_by": "Utilisé par plus de 50 000 utilisateurs dans le monde"
+  },
+  "impact_metrics": {
+    "title": "<em>Métriques</em> d'Impact Qui Comptent",
+    "subtitle": "Nous évaluons les produits selon plusieurs dimensions d'impact environnemental et social pour vous donner une vue d'ensemble.",
+    "metrics": {
+      "carbon_footprint": {
+        "name": "Empreinte Carbone",
+        "description": "Les émissions totales de gaz à effet de serre causées par un produit tout au long de son cycle de vie."
+      },
+      "water_usage": {
+        "name": "Utilisation d'Eau",
+        "description": "La quantité d'eau nécessaire pour produire le produit, de la fabrication à l'emballage."
+      },
+      "labor_conditions": {
+        "name": "Conditions de Travail",
+        "description": "Évaluation des conditions de travail et des pratiques équitables dans la chaîne d'approvisionnement."
+      },
+      "materials": {
+        "name": "Matériaux et Ressources",
+        "description": "Évaluation de l'approvisionnement en matériaux, des ressources renouvelables et de l'efficacité des ressources."
+      }
+    },
+    "benchmarks": {
+      "low_impact": "Impact Faible",
+      "average": "Moyen",
+      "high_impact": "Impact Élevé",
+      "excellent": "Excellent",
+      "fair": "Équitable",
+      "poor": "Médiocre",
+      "sustainable": "Durable",
+      "mixed": "Mixte",
+      "unsustainable": "Non Durable"
+    },
+    "learn_more": "En savoir plus sur cette métrique",
+    "explore_all": "Explorer Toutes les Métriques"
+  },
+  "call_to_action": {
+    "title": "Rejoignez le Mouvement pour une Consommation Plus Consciente",
+    "subtitle": "Ensemble, nous pouvons conduire un changement significatif à travers nos décisions d'achat quotidiennes. Commencez votre chemin vers des choix plus éthiques et durables dès aujourd'hui.",
+    "get_started": "Commencer",
+    "learn_more": "En Savoir Plus",
+    "stats": {
+      "products": {
+        "number": "10K+",
+        "label": "Produits Analysés"
+      },
+      "metrics": {
+        "number": "25+",
+        "label": "Métriques d'Impact"
+      },
+      "brands": {
+        "number": "100+",
+        "label": "Marques Partenaires"
+      },
+      "community": {
+        "number": "50K+",
+        "label": "Membres de la Communauté"
+      }
+    }
+  },
+  "partners": {
+    "industry_badge": "Reconnaissance de l'Industrie",
+    "title": "Reconnu par des Marques et Organisations Leaders",
+    "subtitle": "Nous collaborons avec des marques et des organismes de certification progressistes pour promouvoir la transparence et la durabilité dans les choix des consommateurs",
+    "certification_title": "Partenaires de Certification",
+    "certification_subtitle": "Nous travaillons avec ces normes de certification pour valider les allégations environnementales et sociales",
+    "see_all": "Voir tous nos partenaires"
+  },
+  "product_impact": {
+    "example_analysis": "Exemple d'analyse",
+    "product_impact": "Impact du produit",
+    "eco_friendly": "T-shirt écologique",
+    "category": "Mode durable",
+    "verified_data": "Basé sur des données vérifiées provenant de sources multiples",
+    "metrics": {
+      "carbon_footprint": {
+        "name": "Empreinte carbone",
+        "tooltip": "Mesure les émissions totales de gaz à effet de serre causées pendant le cycle de vie du produit, exprimées en équivalent CO2.",
+        "excellent": "Excellent"
+      },
+      "water_usage": {
+        "name": "Utilisation d'eau",
+        "tooltip": "La quantité d'eau nécessaire pour produire le produit des matières premières au produit fini, mesurée en litres.",
+        "good": "Bon"
+      },
+      "labor_conditions": {
+        "name": "Conditions de travail",
+        "tooltip": "Évaluation des conditions de travail, des salaires équitables et des pratiques de travail éthiques dans la chaîne d'approvisionnement.",
+        "average": "Moyen"
+      },
+      "end_of_life": {
+        "name": "Fin de vie",
+        "tooltip": "Comment le produit est recyclable, biodégradable ou réutilisable après sa durée de vie utile.",
+        "poor": "Médiocre"
+      }
+    },
+    "alternative": "Suggestion alternative",
+    "view": "Voir →",
+    "how_calculated": "Comment ces évaluations sont-elles calculées ?"
+  },
+  "footer": {
+    "about_description": "Donnons aux consommateurs des informations transparentes sur les impacts environnementaux et sociaux pour guider des décisions d'achat plus éclairées.",
+    "newsletter": {
+      "join": "Rejoignez notre newsletter :",
+      "placeholder": "Votre email",
+      "subscribe": "S'abonner",
+      "stay_updated": "Restez Informé",
+      "description": "Rejoignez notre newsletter pour les dernières actualités sur les produits durables et les choix éthiques."
+    },
+    "columns": {
+      "explore": {
+        "title": "Explorer",
+        "links": {
+          "categories": "Catégories d'Impact",
+          "brands": "Marques Durables",
+          "resources": "Ressources Éducatives",
+          "european": "Produits Européens",
+          "community": "Forum Communautaire"
+        }
+      },
+      "about": {
+        "title": "À propos",
+        "links": {
+          "mission": "Notre Mission",
+          "methodology": "Méthodologie",
+          "data": "Sources de Données",
+          "team": "Notre Équipe",
+          "partners": "Partenaires"
+        }
+      },
+      "support": {
+        "title": "Support",
+        "links": {
+          "contact": "Contactez-nous",
+          "faqs": "FAQs",
+          "suggest": "Suggérer un Produit",
+          "report": "Signaler un Problème",
+          "feedback": "Commentaires"
+        }
+      }
+    },
+    "rights_reserved": "Tous droits réservés",
+    "powered_by": "Propulsé par",
+    "policies": {
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation",
+      "cookies": "Politique des Cookies"
+    }
+  },
+  "methodology": {
+    "title": "Méthodologie",
+    "heading": "Notre <em>Méthodologie</em>",
+    "subtitle": "Comment nous évaluons les produits selon plusieurs dimensions de durabilité pour vous fournir des informations précises, transparentes et exploitables.",
+    
+    "overview": {
+      "title": "Notre Approche de l'Évaluation des Produits",
+      "image_alt": "Illustration de la Méthodologie",
+      "paragraph1": "Chez Ethix, nous croyons que faire des choix durables devrait être simple et accessible. Notre méthodologie combine des recherches rigoureuses, des analyses de données et des évaluations d'experts pour vous fournir une compréhension complète de l'impact environnemental et social d'un produit.",
+      "paragraph2": "Nous évaluons les produits selon plusieurs dimensions, en considérant l'ensemble du cycle de vie, de l'extraction des matières premières à l'élimination en fin de vie. Notre objectif est de vous aider à faire des choix éclairés qui correspondent à vos valeurs et contribuent à un avenir plus durable."
+    },
+    
+    "process": {
+      "title": "Notre Processus d'Évaluation",
+      "steps": [
+        {
+          "title": "Collecte de Données",
+          "description": "Nous recueillons des informations à partir de multiples sources, notamment les divulgations des fabricants, les certifications tierces, les évaluations du cycle de vie et les recherches indépendantes."
+        },
+        {
+          "title": "Évaluation d'Impact",
+          "description": "Nous évaluons les produits selon 12 métriques d'impact couvrant les dimensions environnementales, sociales et spécifiques au produit, personnalisées par catégorie de produit."
+        },
+        {
+          "title": "Notation & Référencement",
+          "description": "Nous notons les produits de A à F sur chaque métrique applicable et calculons une moyenne pondérée pour le score global, en comparant avec les références de l'industrie."
+        },
+        {
+          "title": "Révision & Vérification",
+          "description": "Notre équipe d'experts en durabilité examine chaque évaluation, vérifie l'exactitude des données et assure l'application cohérente de notre méthodologie."
+        }
+      ]
+    },
+    
+    "rating_system": {
+      "title": "Notre Système de Notation",
+      "description": "Nous utilisons un système de notation par lettres (A-F) pour faciliter la compréhension des performances des produits selon différentes métriques d'impact.",
+      
+      "ratings": {
+        "excellent": {
+          "label": "Excellent",
+          "description": "Performance de pointe dans l'industrie qui dépasse les normes. Représente l'innovation et un engagement exceptionnel envers la durabilité."
+        },
+        "very_good": {
+          "label": "Très Bon",
+          "description": "Performance significativement supérieure à la moyenne, dépassant les exigences standard et démontrant de solides pratiques de durabilité."
+        },
+        "good": {
+          "label": "Bon",
+          "description": "Performance moyenne à supérieure qui répond aux normes de durabilité et démontre des efforts d'amélioration."
+        },
+        "below_average": {
+          "label": "Inférieur à la Moyenne",
+          "description": "Performance inférieure à la moyenne avec d'importants domaines d'amélioration. Peut se conformer aux exigences minimales mais manque d'efforts complets en matière de durabilité."
+        },
+        "poor": {
+          "label": "Médiocre",
+          "description": "Performance médiocre qui ne répond pas aux normes minimales de durabilité, ou cas où les entreprises ont fait preuve de négligence ou d'écoblanchiment."
+        },
+        "not_applicable": {
+          "label": "Non Applicable",
+          "description": "Utilisé lorsqu'une métrique spécifique ne s'applique pas à une catégorie particulière de produits, ou lorsque les données disponibles sont insuffisantes pour l'évaluation."
+        }
+      },
+      
+      "calculation": {
+        "title": "Comment Nous Calculons les Scores Globaux",
+        "paragraph1": "Les scores globaux des produits sont calculés à l'aide d'une moyenne pondérée des métriques applicables. La pondération varie selon la catégorie de produit pour refléter les domaines d'impact les plus significatifs pour chaque type de produit.",
+        "paragraph2": "Par exemple, l'utilisation de l'eau est pondérée plus lourdement pour les produits textiles, tandis que l'efficacité énergétique reçoit une plus grande importance pour les appareils électroniques. Cette approche spécifique à la catégorie garantit que les produits sont évalués équitablement dans leurs contextes respectifs."
+      },
+      
+      "improvement": {
+        "title": "Amélioration Continue",
+        "description": "Notre méthodologie n'est pas statique—nous affinons continuellement notre approche en fonction des nouvelles recherches, de l'évolution des normes de l'industrie et des retours d'experts en durabilité. Nous révisons et mettons régulièrement à jour nos évaluations pour refléter les informations les plus récentes et les meilleures pratiques."
+      },
+      
+      "transparency": {
+        "title": "Transparence",
+        "description": "Nous croyons en la pleine transparence concernant notre méthodologie. Pour chaque évaluation de produit, nous fournissons des informations détaillées sur les sources de données et les critères utilisés. Si nous rencontrons des limites ou des incertitudes dans les données, nous les divulguons clairement dans nos évaluations."
+      }
+    },
+    
+    "impact_metrics": {
+      "title": "Nos Métriques d'Impact",
+      "description": "Nous évaluons les produits selon 12 métriques d'impact, organisées en trois catégories principales. Chaque métrique est soigneusement définie avec des critères et des normes d'évaluation spécifiques.",
+      "explore_button": "Explorer Nos Métriques d'Impact en Détail",
+      
+      "categories": {
+        "environmental": {
+          "title": "Impact Environnemental",
+          "description": "Nous évaluons l'empreinte environnementale complète d'un produit, de l'extraction des ressources et la fabrication au transport, l'utilisation et l'élimination en fin de vie.",
+          "metrics": [
+            {
+              "name": "Empreinte Carbone",
+              "description": "Mesure les émissions de gaz à effet de serre tout au long du cycle de vie du produit, converties en équivalent CO2 (CO2e).",
+              "methodology": "Les données sont recueillies à partir d'évaluations du cycle de vie, de divulgations des fabricants et de références de l'industrie. Nous considérons à la fois les émissions directes de la production et les émissions indirectes du transport et de l'utilisation de l'énergie."
+            },
+            {
+              "name": "Utilisation d'Eau",
+              "description": "Quantifie la consommation totale d'eau nécessaire à la production, y compris l'eau utilisée dans l'extraction des matériaux, la fabrication et le traitement.",
+              "methodology": "Nous analysons les données de consommation d'eau dans la chaîne d'approvisionnement, avec une attention particulière aux matériaux et processus de fabrication à forte intensité d'eau. Cela inclut l'impact de la pollution de l'eau ainsi que la consommation."
+            },
+            {
+              "name": "Efficacité des Ressources",
+              "description": "Évalue l'efficacité avec laquelle le produit utilise les matières premières et la proportion de matériaux renouvelables ou recyclés.",
+              "methodology": "Nous évaluons la composition des matériaux, l'utilisation de matériaux vierges par rapport aux matériaux recyclés, le rendement des matériaux pendant la fabrication et les éléments de conception qui minimisent la génération de déchets."
+            },
+            {
+              "name": "Fin de Vie",
+              "description": "Évalue la facilité avec laquelle le produit peut être recyclé, composté ou autrement détourné des décharges après utilisation.",
+              "methodology": "Nous analysons la conception du produit pour le démontage, la sélection des matériaux pour la recyclabilité, la disponibilité des programmes de reprise et la biodégradabilité le cas échéant."
+            }
+          ]
+        },
+        "social": {
+          "title": "Responsabilité Sociale",
+          "description": "Nous examinons comment les produits impactent les personnes impliquées dans leur création, des conditions de travail et salaires équitables à l'impact communautaire et l'inclusivité.",
+          "metrics": [
+            {
+              "name": "Pratiques de Travail",
+              "description": "Évalue les conditions de travail, la rémunération équitable, les normes de sécurité et les droits des travailleurs tout au long de la chaîne d'approvisionnement.",
+              "methodology": "Nous analysons les certifications de travail tierces, les politiques d'entreprise, les audits d'usine, les calculs de salaire décent et les rapports des organisations de droits du travail."
+            },
+            {
+              "name": "Impact Communautaire",
+              "description": "Évalue comment la production affecte les communautés locales, y compris la création d'emplois, l'investissement communautaire et l'évitement des déplacements.",
+              "methodology": "Nous examinons les divulgations d'entreprise, les retours communautaires, les rapports d'actualité et les évaluations d'ONG concernant les relations avec les communautés locales."
+            },
+            {
+              "name": "Diversité et Inclusion",
+              "description": "Examine l'engagement de l'entreprise envers la diversité, l'inclusion et l'accessibilité tant dans la main-d'œuvre que dans la conception des produits.",
+              "methodology": "Nous analysons les rapports de diversité de l'entreprise, la composition du leadership, les caractéristiques de conception inclusive et les politiques soutenant les communautés marginalisées."
+            },
+            {
+              "name": "Droits Humains",
+              "description": "Évalue la conformité aux normes des droits humains, y compris la prévention du travail forcé, du travail des enfants et de la discrimination.",
+              "methodology": "Nous incorporons des données des organisations de droits humains, des divulgations de transparence de la chaîne d'approvisionnement et des audits de droits humains tiers."
+            }
+          ]
+        },
+        "governance": {
+          "title": "Gouvernance d'Entreprise",
+          "description": "Nous évaluons l'éthique des affaires et la transparence des entreprises, y compris leur engagement envers la durabilité, les pratiques fiscales et l'engagement des parties prenantes.",
+          "metrics": [
+            {
+              "name": "Transparence",
+              "description": "Évalue la manière dont une entreprise partage ouvertement des informations sur sa chaîne d'approvisionnement, l'origine des ingrédients, l'impact environnemental et les pratiques sociales.",
+              "methodology": "Nous analysons l'exhaustivité des rapports de durabilité, les divulgations de la chaîne d'approvisionnement, la transparence des ingrédients et la réactivité aux demandes des parties prenantes."
+            },
+            {
+              "name": "Pratiques Commerciales Éthiques",
+              "description": "Évalue la conduite de l'entreprise concernant l'anti-corruption, les allégations marketing, les activités de lobbying et la responsabilité fiscale.",
+              "methodology": "Nous incorporons des données sur la conformité légale, les controverses éthiques, les certifications éthiques tierces et l'alignement entre les déclarations publiques et les actions."
+            },
+            {
+              "name": "Engagement Durable",
+              "description": "Mesure l'engagement à long terme envers la durabilité à travers les politiques, les objectifs, les investissements et la responsabilité des dirigeants.",
+              "methodology": "Nous évaluons les objectifs basés sur la science, les feuilles de route de durabilité, l'allocation de capital aux initiatives durables et la rémunération des dirigeants liée aux objectifs de durabilité."
+            }
+          ]
+        }
+      }
+    },
+    
+    "data_sources": {
+      "title": "Nos Sources de Données",
+      "description": "Nous utilisons une variété de sources de données pour assurer des évaluations complètes et précises. Ces sources comprennent :",
+      
+      "manufacturer": {
+        "title": "Divulgations des Fabricants",
+        "description": "Informations fournies par les entreprises sur leurs produits, processus et chaînes d'approvisionnement."
+      },
+      "certifications": {
+        "title": "Certifications Tierces",
+        "description": "Normes vérifiées telles que B Corp, Fair Trade, GOTS, Energy Star, FSC et autres programmes de certification reconnus."
+      },
+      "lifecycle": {
+        "title": "Évaluations du Cycle de Vie",
+        "description": "Évaluations complètes des impacts environnementaux tout au long du cycle de vie d'un produit."
+      },
+      "academic": {
+        "title": "Recherche Académique",
+        "description": "Études et publications évaluées par des pairs provenant d'institutions académiques et d'organisations de recherche."
+      },
+      "investigations": {
+        "title": "Enquêtes Indépendantes",
+        "description": "Conclusions d'ONG, de journalistes d'investigation et d'organisations de surveillance indépendantes."
+      },
+      "benchmarks": {
+        "title": "Références de l'Industrie",
+        "description": "Données sur les moyennes de l'industrie et les meilleures pratiques pour différentes catégories de produits."
+      }
+    },
+    
+    "team": {
+      "title": "Notre Équipe de Méthodologie",
+      "description": "Notre méthodologie est développée et maintenue par une équipe diversifiée d'experts avec des antécédents en science de la durabilité, ingénierie environnementale, responsabilité sociale et conception de produits.",
+      "image_alt": "Équipe de Méthodologie Ethix",
+      "learn_more": "En Savoir Plus sur Notre Équipe"
+    },
+    
+    "faqs": {
+      "title": "Questions Fréquemment Posées",
+      "items": [
+        {
+          "question": "À quelle fréquence mettez-vous à jour vos évaluations ?",
+          "answer": "Nous révisons et mettons à jour nos évaluations régulièrement à mesure que de nouvelles informations deviennent disponibles. Des mises à jour majeures des évaluations de produits sont effectuées au moins annuellement, tandis que notre méthodologie est continuellement affinée en fonction des dernières recherches et développements de l'industrie."
+        },
+        {
+          "question": "Comment gérez-vous les produits avec des informations limitées ?",
+          "answer": "Lorsque les informations sont limitées, nous indiquons clairement les lacunes de données et pouvons attribuer une évaluation inférieure si la transparence est préoccupante. Nous contactons les fabricants pour obtenir des informations supplémentaires et mettons à jour nos évaluations à mesure que plus de données deviennent disponibles."
+        },
+        {
+          "question": "Prenez-vous en compte le prix dans vos évaluations ?",
+          "answer": "Notre objectif principal est la performance en matière de durabilité, pas le prix. Cependant, nous fournissons des informations sur les prix pour aider les consommateurs à prendre des décisions éclairées. Nous croyons que les options durables devraient être accessibles à tous, nous présentons donc des produits à différents prix."
+        },
+        {
+          "question": "Comment empêchez-vous l'écoblanchiment dans vos évaluations ?",
+          "answer": "Nous allons au-delà des allégations marketing et exigeons des preuves substantielles des pratiques de durabilité. Notre méthodologie donne la priorité à la vérification par des tiers, aux métriques quantifiables et aux rapports transparents. Les entreprises doivent démontrer un impact réel, pas seulement de bonnes intentions."
+        },
+        {
+          "question": "Les entreprises peuvent-elles payer pour améliorer leurs évaluations ?",
+          "answer": "Absolument pas. Nos évaluations sont complètement indépendantes et ne peuvent être influencées par des considérations financières. Nous n'acceptons pas de paiement des entreprises pour améliorer leurs évaluations ou pour être présentées sur notre plateforme."
+        }
+      ]
+    },
+    
+    "cta": {
+      "title": "Prêt à Explorer des Produits Durables ?",
+      "description": "Parcourez notre catalogue de produits évalués et trouvez des options qui correspondent à vos valeurs.",
+      "explore_button": "Explorer les Produits",
+      "learn_button": "En Savoir Plus sur Nos Métriques"
+    }
+  }
+} 

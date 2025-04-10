@@ -1,11 +1,16 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Link from "next/link";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  
+  // Get translations
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,22 +38,22 @@ export default function Header() {
   };
 
   const navLinks = [
-    { href: "/", label: "Home" },
+    { href: "/", label: t('navigation.home') },
     { 
       href: "/products", 
-      label: "Products",
+      label: t('navigation.products'),
       isDropdown: true,
       dropdownLinks: [
-        { href: "/products", label: "All Products" },
-        { href: "/products?category=personal-care", label: "Personal Care" },
-        { href: "/products?category=home", label: "Home" },
-        { href: "/products?category=fashion", label: "Fashion" },
+        { href: "/products", label: t('products_categories.all_products') },
+        { href: "/products?category=personal-care", label: t('products_categories.personal_care') },
+        { href: "/products?category=home", label: t('products_categories.home') },
+        { href: "/products?category=fashion", label: t('products_categories.fashion') },
       ] 
     },
-    { href: "/impact-data", label: "Impact Data" },
-    { href: "/learn", label: "Learn" },
-    { href: "/community", label: "Community" },
-    { href: "/about", label: "About" },
+    { href: "/impact-data", label: t('navigation.impact_data') },
+    { href: "/learn", label: t('navigation.learn') },
+    { href: "/community", label: t('navigation.community') },
+    { href: "/about", label: t('navigation.about') },
   ];
 
   return (
@@ -101,6 +106,10 @@ export default function Header() {
               </ul>
             </nav>
 
+            <div className="hidden md:block">
+              <LanguageSwitcher />
+            </div>
+
             <button
               onClick={toggleSearch}
               className="text-slate hover:text-earth-green focus:outline-none transition-colors w-10 h-10 flex items-center justify-center cursor-pointer"
@@ -112,7 +121,7 @@ export default function Header() {
             </button>
 
             <Link href="/get-started" className="hidden md:inline-flex items-center justify-center rounded-full bg-earth-green hover:bg-earth-green-dark text-white font-medium py-2 px-5 transition-colors duration-200 cursor-pointer">
-              Get Started
+              {t('navigation.get_started')}
             </Link>
 
             <button
@@ -169,8 +178,14 @@ export default function Header() {
                 </Link>
               )
             ))}
+            
+            {/* Language Switcher for mobile */}
+            <div className="px-3 py-2">
+              <LanguageSwitcher />
+            </div>
+            
             <Link href="/get-started" className="flex items-center justify-center w-full rounded-full bg-earth-green text-white font-medium py-3 px-5 mt-3 hover:bg-earth-green-dark transition-colors duration-200 cursor-pointer">
-              Get Started
+              {t('navigation.get_started')}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>

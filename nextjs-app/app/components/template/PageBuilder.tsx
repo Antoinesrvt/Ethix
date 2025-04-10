@@ -5,23 +5,34 @@ import { useOptimistic } from "next-sanity/hooks";
 import Link from "next/link";
 
 import BlockRenderer from "@/app/components/BlockRenderer";
-import { GetPageQueryResult } from "@/sanity.types";
 import { dataAttr } from "@/sanity/lib/utils";
 import { studioUrl } from "@/sanity/lib/api";
 
+type PageData = {
+  _id: string;
+  _type: string;
+  name?: string;
+  heading?: string;
+  subheading?: string;
+  slug?: { current: string };
+  pageBuilder?: PageBuilderSection[];
+  localizedContent?: {
+    en?: {
+      name?: string;
+      heading?: string;
+      subheading?: string;
+    };
+    fr?: any;
+  };
+};
+
 type PageBuilderPageProps = {
-  page: GetPageQueryResult;
+  page: PageData;
 };
 
 type PageBuilderSection = {
   _key: string;
   _type: string;
-};
-
-type PageData = {
-  _id: string;
-  _type: string;
-  pageBuilder?: PageBuilderSection[];
 };
 
 /**
@@ -30,7 +41,7 @@ type PageData = {
 
 function renderSections(
   pageBuilderSections: PageBuilderSection[],
-  page: GetPageQueryResult,
+  page: PageData,
 ) {
   if (!page) {
     return null;
@@ -56,7 +67,7 @@ function renderSections(
   );
 }
 
-function renderEmptyState(page: GetPageQueryResult) {
+function renderEmptyState(page: PageData) {
   if (!page) {
     return null;
   }

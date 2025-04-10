@@ -1,34 +1,18 @@
 "use client"
+
 import Link from 'next/link';
+import LocalizedLink from '@/components/LocalizedLink';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 
-// InfoTooltip component for displaying explanations on hover
-const InfoTooltip = ({ content }: { content: string }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  
-  return (
-    <div className="relative inline-block ml-1">
-      <button
-        className="text-slate/60 hover:text-earth-green transition-colors w-4 h-4 rounded-full bg-light-gray flex items-center justify-center text-xs"
-        onMouseEnter={() => setIsVisible(true)}
-        onMouseLeave={() => setIsVisible(false)}
-        onClick={() => setIsVisible(!isVisible)}
-        aria-label="More information"
-      >
-        ?
-      </button>
-      {isVisible && (
-        <div className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-white rounded-lg shadow-md text-xs text-slate border border-light-gray">
-          {content}
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-white border-r border-b border-light-gray"></div>
-        </div>
-      )}
-    </div>
-  );
-};
+import InfoTooltip from './InfoTooltip';
+import HeroTitle from './HeroTitle';
 
 export default function Hero() {
+  // Use the useTranslation hook for client components
+  const { t } = useTranslation();
+  
   // Animation classes for progress bars
   const animatedBarClasses = "transition-all duration-1000 ease-out transform origin-left scale-x-0 animate-expand";
 
@@ -43,26 +27,24 @@ export default function Hero() {
           <div className="flex flex-col space-y-8 text-center lg:text-left">
             <div className="space-y-4">
               <span className="inline-block px-4 py-2 rounded-pill bg-earth-green/10 text-earth-green font-medium text-sm">
-                Ethical Consumer Platform
+                {t('hero.platform_badge')}
               </span>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-charcoal">
-                Make <span className="text-earth-green">Ethical</span> Choices for a <span className="text-earth-green">Better</span> Tomorrow
-              </h1>
+              <HeroTitle />
               <p className="text-lg text-slate max-w-lg mx-auto lg:mx-0">
-                Access transparent impact data on products to make informed, ethical choices that align with your values.
+                {t('hero.subtitle')}
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="/products" className="rounded-full bg-earth-green text-white font-medium py-3 px-6 hover:bg-earth-green-dark transition-colors flex items-center justify-center">
-                Start Exploring
+              <LocalizedLink href="/products" className="rounded-full bg-earth-green text-white font-medium py-3 px-6 hover:bg-earth-green-dark transition-colors flex items-center justify-center">
+                {t('hero.start_exploring')}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
-              </Link>
-              <Link href="/methodology" className="rounded-full bg-white text-earth-green font-medium py-3 px-6 border border-earth-green/20 hover:bg-earth-green/5 transition-colors flex items-center justify-center">
-                How It Works
-              </Link>
+              </LocalizedLink>
+              <LocalizedLink href="/methodology" className="rounded-full bg-white text-earth-green font-medium py-3 px-6 border border-earth-green/20 hover:bg-earth-green/5 transition-colors flex items-center justify-center">
+                {t('hero.how_it_works')}
+              </LocalizedLink>
             </div>
             
             <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-4">
@@ -72,7 +54,7 @@ export default function Hero() {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-sm text-slate">10,000+ Products</span>
+                <span className="text-sm text-slate">{t('hero.features.products')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="p-1 rounded-full bg-positive/10">
@@ -80,7 +62,7 @@ export default function Hero() {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-sm text-slate">Multiple Impact Metrics</span>
+                <span className="text-sm text-slate">{t('hero.features.metrics')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="p-1 rounded-full bg-positive/10">
@@ -88,7 +70,7 @@ export default function Hero() {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-sm text-slate">Verified Data Sources</span>
+                <span className="text-sm text-slate">{t('hero.features.data')}</span>
               </div>
             </div>
           </div>
@@ -102,7 +84,7 @@ export default function Hero() {
               <div className="relative bg-white rounded-2xl shadow-floating overflow-hidden border border-light-gray transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 {/* Label indicating this is an example */}
                 <div className="absolute top-3 right-3 bg-earth-green/10 text-earth-green text-xs font-medium px-2 py-1 rounded-pill">
-                  Example Analysis
+                  {t('product_impact.example_analysis')}
                 </div>
                 
                 <div className="p-6">
@@ -117,8 +99,8 @@ export default function Hero() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-xl">Product Impact</h3>
-                      <p className="text-xs text-slate">Eco-Friendly T-Shirt | Sustainable Fashion</p>
+                      <h3 className="font-heading font-bold text-xl">{t('product_impact.product_impact')}</h3>
+                      <p className="text-xs text-slate">{t('product_impact.eco_friendly')} | {t('product_impact.category')}</p>
                     </div>
                   </div>
                   
@@ -127,17 +109,17 @@ export default function Hero() {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-earth-green" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-xs font-medium text-slate">Based on verified data from multiple sources</span>
+                    <span className="text-xs font-medium text-slate">{t('product_impact.verified_data')}</span>
                   </div>
                   
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between mb-1">
                         <span className="text-sm font-medium text-slate flex items-center">
-                          Carbon Footprint
-                          <InfoTooltip content="Measures the total greenhouse gas emissions caused during the product's lifecycle, expressed in CO2 equivalent." />
+                          {t('product_impact.metrics.carbon_footprint.name')}
+                          <InfoTooltip i18nKey="product_impact.metrics.carbon_footprint.tooltip" />
                         </span>
-                        <span className="text-sm font-medium text-positive">Excellent</span>
+                        <span className="text-sm font-medium text-positive">{t('product_impact.metrics.carbon_footprint.excellent')}</span>
                       </div>
                       <div className="w-full bg-light-gray rounded-full h-2 overflow-hidden">
                         <div className="bg-positive h-2 rounded-full animate-expand-x" style={{ width: '85%' }}></div>
@@ -147,10 +129,10 @@ export default function Hero() {
                     <div>
                       <div className="flex justify-between mb-1">
                         <span className="text-sm font-medium text-slate flex items-center">
-                          Water Usage
-                          <InfoTooltip content="The amount of water required to produce the product from raw materials to finished product, measured in liters." />
+                          {t('product_impact.metrics.water_usage.name')}
+                          <InfoTooltip i18nKey="product_impact.metrics.water_usage.tooltip" />
                         </span>
-                        <span className="text-sm font-medium text-positive">Good</span>
+                        <span className="text-sm font-medium text-positive">{t('product_impact.metrics.water_usage.good')}</span>
                       </div>
                       <div className="w-full bg-light-gray rounded-full h-2 overflow-hidden">
                         <div className="bg-positive h-2 rounded-full animate-expand-x" style={{ width: '70%', animationDelay: '0.2s' }}></div>
@@ -160,10 +142,10 @@ export default function Hero() {
                     <div>
                       <div className="flex justify-between mb-1">
                         <span className="text-sm font-medium text-slate flex items-center">
-                          Labor Conditions
-                          <InfoTooltip content="Assessment of working conditions, fair wages, and ethical labor practices in the supply chain." />
+                          {t('product_impact.metrics.labor_conditions.name')}
+                          <InfoTooltip i18nKey="product_impact.metrics.labor_conditions.tooltip" />
                         </span>
-                        <span className="text-sm font-medium text-neutral">Average</span>
+                        <span className="text-sm font-medium text-neutral">{t('product_impact.metrics.labor_conditions.average')}</span>
                       </div>
                       <div className="w-full bg-light-gray rounded-full h-2 overflow-hidden">
                         <div className="bg-neutral h-2 rounded-full animate-expand-x" style={{ width: '50%', animationDelay: '0.4s' }}></div>
@@ -173,10 +155,10 @@ export default function Hero() {
                     <div>
                       <div className="flex justify-between mb-1">
                         <span className="text-sm font-medium text-slate flex items-center">
-                          End of Life
-                          <InfoTooltip content="How recyclable, biodegradable, or reusable the product is after its useful life." />
+                          {t('product_impact.metrics.end_of_life.name')}
+                          <InfoTooltip i18nKey="product_impact.metrics.end_of_life.tooltip" />
                         </span>
-                        <span className="text-sm font-medium text-negative">Poor</span>
+                        <span className="text-sm font-medium text-negative">{t('product_impact.metrics.end_of_life.poor')}</span>
                       </div>
                       <div className="w-full bg-light-gray rounded-full h-2 overflow-hidden">
                         <div className="bg-negative h-2 rounded-full animate-expand-x" style={{ width: '25%', animationDelay: '0.6s' }}></div>
@@ -188,26 +170,26 @@ export default function Hero() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <div className="h-8 w-8 rounded-full bg-light-gray flex items-center justify-center text-xs font-medium text-charcoal">AS</div>
-                        <span className="text-sm font-medium">Alternative Suggestion</span>
+                        <span className="text-sm font-medium">{t('product_impact.alternative')}</span>
                       </div>
-                      <Link 
+                      <LocalizedLink 
                         href="/products/alternatives" 
                         className="text-earth-green text-sm font-medium hover:text-earth-green-dark flex items-center"
                       >
-                        View →
-                      </Link>
+                        {t('product_impact.view')}
+                      </LocalizedLink>
                     </div>
                   </div>
                 </div>
                 
                 {/* Educational element */}
                 <div className="p-3 bg-light-gray/20 text-center border-t border-light-gray">
-                  <Link href="/methodology" className="text-xs text-earth-green hover:text-earth-green-dark font-medium flex justify-center items-center">
+                  <LocalizedLink href="/methodology" className="text-xs text-earth-green hover:text-earth-green-dark font-medium flex justify-center items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    How are these ratings calculated?
-                  </Link>
+                    {t('product_impact.how_calculated')}
+                  </LocalizedLink>
                 </div>
               </div>
             </div>

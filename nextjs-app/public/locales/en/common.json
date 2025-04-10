@@ -1,0 +1,474 @@
+{
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "impact_data": "Impact Data",
+    "learn": "Learn",
+    "community": "Community",
+    "about": "About",
+    "get_started": "Get Started",
+    "search": "Search",
+    "cancel": "Cancel"
+  },
+  "products_categories": {
+    "all_products": "All Products",
+    "personal_care": "Personal Care",
+    "home": "Home",
+    "fashion": "Fashion"
+  },
+  "search": {
+    "placeholder": "Search for products, brands, or topics...",
+    "popular_searches": "POPULAR SEARCHES:",
+    "eco_friendly": "Eco-friendly products",
+    "sustainable_fashion": "Sustainable fashion",
+    "fair_trade": "Fair trade",
+    "carbon_neutral": "Carbon neutral"
+  },
+  "hero": {
+    "platform_badge": "Ethical Consumer Platform",
+    "title": "Make <em>Ethical</em> Choices for a <em>Better</em> Tomorrow",
+    "subtitle": "Access transparent impact data on products to make informed, ethical choices that align with your values.",
+    "start_exploring": "Start Exploring",
+    "how_it_works": "How It Works",
+    "features": {
+      "products": "10,000+ Products",
+      "metrics": "Multiple Impact Metrics",
+      "data": "Verified Data Sources"
+    }
+  },
+  "features": {
+    "title": "Empowering You to Make <em>Better Choices</em>",
+    "subtitle": "Our platform provides the tools and information you need to align your purchasing decisions with your values.",
+    "items": {
+      "data": {
+        "title": "Transparent Data",
+        "description": "Access comprehensive environmental and social impact metrics for products, making informed decisions easier."
+      },
+      "comparisons": {
+        "title": "Ethical Comparisons",
+        "description": "Compare similar products side-by-side based on their sustainability metrics and ethical ratings."
+      },
+      "alternatives": {
+        "title": "Alternative Suggestions",
+        "description": "Discover more sustainable and ethical alternatives to products you are considering purchasing."
+      },
+      "insights": {
+        "title": "Community Insights",
+        "description": "Benefit from user reviews and feedback focused on ethical and sustainability aspects of products."
+      },
+      "recommendations": {
+        "title": "Personalized Recommendations",
+        "description": "Receive tailored product recommendations based on your ethical priorities and values."
+      },
+      "resources": {
+        "title": "Educational Resources",
+        "description": "Access guides and articles to help you understand sustainability metrics and make better choices."
+      }
+    },
+    "coming_soon": "More features coming soon!"
+  },
+  "testimonials": {
+    "title": "What Our <em>Community</em> Says",
+    "subtitle": "Join thousands of people who are making more conscious purchasing decisions with our platform.",
+    "items": [
+      {
+        "quote": "ChooseBetter has completely changed how I shop. I can now easily find products that align with my environmental values.",
+        "name": "Sophie Martinez",
+        "title": "Sustainability Advocate"
+      },
+      {
+        "quote": "I've been looking for a tool like this for years. The impact metrics make it easy to compare products and make better choices.",
+        "name": "David Chen",
+        "title": "Conscious Consumer"
+      },
+      {
+        "quote": "As someone who cares about ethical production, this platform has been invaluable in helping me support companies with fair labor practices.",
+        "name": "Aisha Johnson",
+        "title": "Ethical Shopping Enthusiast"
+      }
+    ],
+    "trusted_by": "Trusted by 50,000+ users worldwide"
+  },
+  "impact_metrics": {
+    "title": "Impact <em>Metrics</em> That Matter",
+    "subtitle": "We evaluate products across multiple dimensions of environmental and social impact to give you a comprehensive view.",
+    "metrics": {
+      "carbon_footprint": {
+        "name": "Carbon Footprint",
+        "description": "The total greenhouse gas emissions caused by a product throughout its lifecycle."
+      },
+      "water_usage": {
+        "name": "Water Usage",
+        "description": "The amount of water required to produce the product, from manufacturing to packaging."
+      },
+      "labor_conditions": {
+        "name": "Labor Conditions",
+        "description": "Assessment of working conditions and fair labor practices in the supply chain."
+      },
+      "materials": {
+        "name": "Materials & Resources",
+        "description": "Evaluation of material sourcing, renewable resources, and resource efficiency."
+      }
+    },
+    "benchmarks": {
+      "low_impact": "Low Impact",
+      "average": "Average",
+      "high_impact": "High Impact",
+      "excellent": "Excellent",
+      "fair": "Fair",
+      "poor": "Poor",
+      "sustainable": "Sustainable",
+      "mixed": "Mixed",
+      "unsustainable": "Unsustainable"
+    },
+    "learn_more": "Learn more about this metric",
+    "explore_all": "Explore All Metrics"
+  },
+  "call_to_action": {
+    "title": "Join the Movement for More Conscious Consumption",
+    "subtitle": "Together, we can drive meaningful change through our everyday purchasing decisions. Start your journey toward more ethical and sustainable choices today.",
+    "get_started": "Get Started",
+    "learn_more": "Learn More",
+    "stats": {
+      "products": {
+        "number": "10K+",
+        "label": "Products Analyzed"
+      },
+      "metrics": {
+        "number": "25+",
+        "label": "Impact Metrics"
+      },
+      "brands": {
+        "number": "100+",
+        "label": "Brand Partners"
+      },
+      "community": {
+        "number": "50K+",
+        "label": "Community Members"
+      }
+    }
+  },
+  "partners": {
+    "industry_badge": "Industry Recognition",
+    "title": "Trusted by Leading Brands & Organizations",
+    "subtitle": "We collaborate with forward-thinking brands and certification bodies to promote transparency and sustainability in consumer choices",
+    "certification_title": "Certification Partners",
+    "certification_subtitle": "We work with these certification standards to validate environmental and social claims",
+    "see_all": "See all our partners"
+  },
+  "product_impact": {
+    "example_analysis": "Example Analysis",
+    "product_impact": "Product Impact",
+    "eco_friendly": "Eco-Friendly T-Shirt",
+    "category": "Sustainable Fashion",
+    "verified_data": "Based on verified data from multiple sources",
+    "metrics": {
+      "carbon_footprint": {
+        "name": "Carbon Footprint",
+        "tooltip": "Measures the total greenhouse gas emissions caused during the product's lifecycle, expressed in CO2 equivalent.",
+        "excellent": "Excellent"
+      },
+      "water_usage": {
+        "name": "Water Usage",
+        "tooltip": "The amount of water required to produce the product from raw materials to finished product, measured in liters.",
+        "good": "Good"
+      },
+      "labor_conditions": {
+        "name": "Labor Conditions",
+        "tooltip": "Assessment of working conditions, fair wages, and ethical labor practices in the supply chain.",
+        "average": "Average"
+      },
+      "end_of_life": {
+        "name": "End of Life",
+        "tooltip": "How recyclable, biodegradable, or reusable the product is after its useful life.",
+        "poor": "Poor"
+      }
+    },
+    "alternative": "Alternative Suggestion",
+    "view": "View →",
+    "how_calculated": "How are these ratings calculated?"
+  },
+  "footer": {
+    "about_description": "Empowering consumers with transparent information about environmental and social impacts to guide better purchasing decisions.",
+    "newsletter": {
+      "join": "Join our newsletter:",
+      "placeholder": "Your email",
+      "subscribe": "Subscribe",
+      "stay_updated": "Stay Updated",
+      "description": "Join our newsletter for the latest on sustainable products and ethical choices."
+    },
+    "columns": {
+      "explore": {
+        "title": "Explore",
+        "links": {
+          "categories": "Impact Categories",
+          "brands": "Sustainable Brands",
+          "resources": "Educational Resources",
+          "european": "European Products",
+          "community": "Community Forum"
+        }
+      },
+      "about": {
+        "title": "About",
+        "links": {
+          "mission": "Our Mission",
+          "methodology": "Methodology",
+          "data": "Data Sources",
+          "team": "Our Team",
+          "partners": "Partners"
+        }
+      },
+      "support": {
+        "title": "Support",
+        "links": {
+          "contact": "Contact Us",
+          "faqs": "FAQs",
+          "suggest": "Suggest a Product",
+          "report": "Report an Issue",
+          "feedback": "Feedback"
+        }
+      }
+    },
+    "rights_reserved": "All rights reserved",
+    "powered_by": "Powered by",
+    "policies": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    }
+  },
+  "methodology": {
+    "title": "Methodology",
+    "heading": "Our <em>Methodology</em>",
+    "subtitle": "How we evaluate products across multiple sustainability dimensions to provide you with accurate, transparent, and actionable information.",
+    
+    "overview": {
+      "title": "Our Approach to Product Evaluation",
+      "image_alt": "Methodology Illustration",
+      "paragraph1": "At Ethix, we believe that making sustainable choices should be easy and accessible. Our methodology combines rigorous research, data analysis, and expert evaluation to provide you with a comprehensive understanding of a product's environmental and social impact.",
+      "paragraph2": "We evaluate products across multiple dimensions, considering the entire lifecycle from raw material extraction to end-of-life disposal. Our goal is to help you make informed choices that align with your values and contribute to a more sustainable future."
+    },
+    
+    "process": {
+      "title": "Our Evaluation Process",
+      "steps": [
+        {
+          "title": "Data Collection",
+          "description": "We gather information from multiple sources, including manufacturer disclosures, third-party certifications, lifecycle assessments, and independent research."
+        },
+        {
+          "title": "Impact Assessment",
+          "description": "We evaluate products across 12 impact metrics covering environmental, social, and product-specific dimensions, customized by product category."
+        },
+        {
+          "title": "Scoring & Benchmarking",
+          "description": "We rate products from A to F on each applicable metric and calculate a weighted average for the overall score, comparing against industry benchmarks."
+        },
+        {
+          "title": "Review & Verification",
+          "description": "Our team of sustainability experts reviews each evaluation, verifying data accuracy and ensuring consistent application of our methodology."
+        }
+      ]
+    },
+    
+    "rating_system": {
+      "title": "Our Rating System",
+      "description": "We use a letter-grade rating system (A-F) to make it easy to understand how products perform across different impact metrics.",
+      
+      "ratings": {
+        "excellent": {
+          "label": "Excellent",
+          "description": "Industry-leading performance that goes above and beyond standards. Represents innovation and exceptional commitment to sustainability."
+        },
+        "very_good": {
+          "label": "Very Good",
+          "description": "Significantly better than average performance, exceeding standard requirements and demonstrating strong sustainability practices."
+        },
+        "good": {
+          "label": "Good",
+          "description": "Average to above-average performance that meets sustainability standards and demonstrates improvement efforts."
+        },
+        "below_average": {
+          "label": "Below Average",
+          "description": "Below average performance with significant areas for improvement. May comply with minimum requirements but lacks comprehensive sustainability efforts."
+        },
+        "poor": {
+          "label": "Poor",
+          "description": "Poor performance that fails to meet minimum sustainability standards, or cases where companies have demonstrated negligence or greenwashing."
+        },
+        "not_applicable": {
+          "label": "Not Applicable",
+          "description": "Used when a specific metric does not apply to a particular product category, or when insufficient data is available for evaluation."
+        }
+      },
+      
+      "calculation": {
+        "title": "How We Calculate Overall Scores",
+        "paragraph1": "Overall product scores are calculated using a weighted average of applicable metrics. The weighting varies by product category to reflect the most significant impact areas for each type of product.",
+        "paragraph2": "For example, water usage is weighted more heavily for textile products, while energy efficiency receives greater emphasis for electronic devices. This category-specific approach ensures that products are evaluated fairly within their respective contexts."
+      },
+      
+      "improvement": {
+        "title": "Continuous Improvement",
+        "description": "Our methodology is not static—we continuously refine our approach based on new research, evolving industry standards, and feedback from sustainability experts. We regularly review and update our ratings to reflect the latest information and best practices."
+      },
+      
+      "transparency": {
+        "title": "Transparency",
+        "description": "We believe in full transparency about our methodology. For each product evaluation, we provide detailed information about the data sources and criteria used. If we encounter data limitations or uncertainties, we clearly disclose these in our assessments."
+      }
+    },
+    
+    "impact_metrics": {
+      "title": "Our Impact Metrics",
+      "description": "We evaluate products across 12 impact metrics, organized into three main categories. Each metric is carefully defined with specific criteria and evaluation standards.",
+      "explore_button": "Explore Our Impact Metrics in Detail",
+      
+      "categories": {
+        "environmental": {
+          "title": "Environmental Impact",
+          "description": "We evaluate the complete environmental footprint of a product, from resource extraction and manufacturing to transportation, use, and end-of-life disposal.",
+          "metrics": [
+            {
+              "name": "Carbon Footprint",
+              "description": "Measures greenhouse gas emissions throughout the product lifecycle, converted to CO2 equivalent (CO2e).",
+              "methodology": "Data is gathered from lifecycle assessments, manufacturer disclosures, and industry benchmarks. We consider both direct emissions from production and indirect emissions from transportation and energy use."
+            },
+            {
+              "name": "Water Usage",
+              "description": "Quantifies the total water consumption required for production, including water used in material extraction, manufacturing, and processing.",
+              "methodology": "We analyze water consumption data across the supply chain, with particular attention to water-intensive materials and manufacturing processes. This includes water pollution impact as well as consumption."
+            },
+            {
+              "name": "Resource Efficiency",
+              "description": "Evaluates how efficiently the product uses raw materials and the proportion of renewable or recycled materials.",
+              "methodology": "We assess material composition, use of virgin vs. recycled materials, material yield during manufacturing, and design elements that minimize waste generation."
+            },
+            {
+              "name": "End of Life",
+              "description": "Assesses how easily the product can be recycled, composted, or otherwise diverted from landfill after use.",
+              "methodology": "We analyze product design for disassembly, material selection for recyclability, availability of take-back programs, and biodegradability where applicable."
+            }
+          ]
+        },
+        "social": {
+          "title": "Social Responsibility",
+          "description": "We examine how products impact the people involved in their creation, from working conditions and fair wages to community impact and inclusivity.",
+          "metrics": [
+            {
+              "name": "Labor Practices",
+              "description": "Evaluates working conditions, fair pay, safety standards, and worker rights throughout the supply chain.",
+              "methodology": "We analyze third-party labor certifications, company policies, factory audits, living wage calculations, and reports from labor rights organizations."
+            },
+            {
+              "name": "Community Impact",
+              "description": "Assesses how production affects local communities, including job creation, community investment, and avoiding displacement.",
+              "methodology": "We examine company disclosures, community feedback, news reports, and NGO assessments about relationships with local communities."
+            },
+            {
+              "name": "Diversity & Inclusion",
+              "description": "Examines company commitment to diversity, inclusion, and accessibility in both workforce and product design.",
+              "methodology": "We analyze company diversity reports, leadership composition, inclusive design features, and policies supporting marginalized communities."
+            },
+            {
+              "name": "Human Rights",
+              "description": "Evaluates compliance with human rights standards, including prevention of forced labor, child labor, and discrimination.",
+              "methodology": "We incorporate data from human rights organizations, supply chain transparency disclosures, and third-party human rights audits."
+            }
+          ]
+        },
+        "governance": {
+          "title": "Corporate Governance",
+          "description": "We evaluate the business ethics and transparency of companies, including their commitment to sustainability, tax practices, and stakeholder engagement.",
+          "metrics": [
+            {
+              "name": "Transparency",
+              "description": "Assesses how openly a company shares information about its supply chain, ingredient sourcing, environmental impact, and social practices.",
+              "methodology": "We analyze the comprehensiveness of sustainability reports, supply chain disclosures, ingredient transparency, and responsiveness to stakeholder inquiries."
+            },
+            {
+              "name": "Ethical Business Practices",
+              "description": "Evaluates company conduct regarding anti-corruption, marketing claims, lobbying activities, and tax responsibility.",
+              "methodology": "We incorporate data on legal compliance, ethical controversies, third-party ethics certifications, and alignment between public statements and actions."
+            },
+            {
+              "name": "Sustainable Commitment",
+              "description": "Measures long-term commitment to sustainability through policies, targets, investments, and executive accountability.",
+              "methodology": "We evaluate science-based targets, sustainability roadmaps, capital allocation to sustainable initiatives, and executive compensation tied to sustainability goals."
+            }
+          ]
+        }
+      }
+    },
+    
+    "data_sources": {
+      "title": "Our Data Sources",
+      "description": "We use a variety of data sources to ensure comprehensive and accurate evaluations. These include:",
+      
+      "manufacturer": {
+        "title": "Manufacturer Disclosures",
+        "description": "Information provided by companies about their products, processes, and supply chains."
+      },
+      "certifications": {
+        "title": "Third-Party Certifications",
+        "description": "Verified standards such as B Corp, Fair Trade, GOTS, Energy Star, FSC, and other recognized certification programs."
+      },
+      "lifecycle": {
+        "title": "Life Cycle Assessments",
+        "description": "Comprehensive evaluations of environmental impacts throughout a product's life cycle."
+      },
+      "academic": {
+        "title": "Academic Research",
+        "description": "Peer-reviewed studies and publications from academic institutions and research organizations."
+      },
+      "investigations": {
+        "title": "Independent Investigations",
+        "description": "Findings from NGOs, investigative journalists, and independent monitoring organizations."
+      },
+      "benchmarks": {
+        "title": "Industry Benchmarks",
+        "description": "Data on industry averages and best practices for different product categories."
+      }
+    },
+    
+    "team": {
+      "title": "Meet Our Methodology Team",
+      "description": "Our methodology is developed and maintained by a diverse team of experts with backgrounds in sustainability science, environmental engineering, social responsibility, and product design.",
+      "image_alt": "Ethix Methodology Team",
+      "learn_more": "Learn About Our Team"
+    },
+    
+    "faqs": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How often do you update your ratings?",
+          "answer": "We review and update our ratings regularly as new information becomes available. Major updates to product evaluations are conducted at least annually, while our methodology undergoes continuous refinement based on the latest research and industry developments."
+        },
+        {
+          "question": "How do you handle products with limited information?",
+          "answer": "When information is limited, we clearly indicate data gaps and may assign a lower rating if transparency is a concern. We reach out to manufacturers for additional information and update our evaluations as more data becomes available."
+        },
+        {
+          "question": "Do you consider price in your ratings?",
+          "answer": "Our primary focus is on sustainability performance, not price. However, we do provide price information to help consumers make informed decisions. We believe sustainable options should be accessible to all, so we feature products at various price points."
+        },
+        {
+          "question": "How do you prevent greenwashing in your evaluations?",
+          "answer": "We look beyond marketing claims and require substantive evidence of sustainability practices. Our methodology prioritizes third-party verification, quantifiable metrics, and transparent reporting. Companies must demonstrate real impact, not just good intentions."
+        },
+        {
+          "question": "Can companies pay to improve their ratings?",
+          "answer": "Absolutely not. Our ratings are completely independent and cannot be influenced by financial considerations. We do not accept payment from companies to improve their ratings or to be featured on our platform."
+        }
+      ]
+    },
+    
+    "cta": {
+      "title": "Ready to Explore Sustainable Products?",
+      "description": "Browse our catalog of evaluated products and find options that align with your values.",
+      "explore_button": "Explore Products",
+      "learn_button": "Learn About Our Metrics"
+    }
+  }
+} 

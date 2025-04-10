@@ -462,203 +462,49 @@ export type SanityAssistSchemaTypeField = {
 
 export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | CallToAction | Link | InfoSection | BlockContent | Page | Post | Person | Slug | Settings | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | SanityAssistInstructionTask | SanityAssistTaskStatus | SanityAssistSchemaTypeAnnotations | SanityAssistOutputType | SanityAssistOutputField | SanityAssistInstructionContext | AssistInstructionContext | SanityAssistInstructionUserInput | SanityAssistInstructionPrompt | SanityAssistInstructionFieldRef | SanityAssistInstruction | SanityAssistSchemaTypeField;
 export declare const internalGroqTypeReferenceTo: unique symbol;
-// Source: ./sanity/lib/queries.ts
-// Variable: settingsQuery
-// Query: *[_type == "settings"][0]
-export type SettingsQueryResult = {
-  _id: string;
-  _type: "settings";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title: string;
-  description?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal";
-    listItem?: never;
-    markDefs?: Array<{
-      href: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  ogImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    metadataBase?: string;
-    _type: "image";
-  };
-} | null;
-// Variable: getPageQuery
-// Query: *[_type == 'page' && slug.current == $slug][0]{    _id,    _type,    name,    slug,    heading,    subheading,    "pageBuilder": pageBuilder[]{      ...,      _type == "callToAction" => {          link {      ...,        _type == "link" => {    "page": page->slug.current,    "post": post->slug.current  }      },      },      _type == "infoSection" => {        content[]{          ...,          markDefs[]{            ...,              _type == "link" => {    "page": page->slug.current,    "post": post->slug.current  }          }        }      },    },  }
-export type GetPageQueryResult = {
-  _id: string;
-  _type: "page";
-  name: string;
-  slug: Slug;
-  heading: string;
-  subheading: string | null;
-  pageBuilder: Array<{
-    _key: string;
-    _type: "callToAction";
-    heading: string;
-    text?: string;
-    buttonText?: string;
-    link: {
-      _type: "link";
-      linkType?: "href" | "page" | "post";
-      href?: string;
-      page: string | null;
-      post: string | null;
-      openInNewTab?: boolean;
-    } | null;
-  } | {
-    _key: string;
-    _type: "infoSection";
-    heading?: string;
-    subheading?: string;
-    content: Array<{
-      children?: Array<{
-        marks?: Array<string>;
-        text?: string;
-        _type: "span";
-        _key: string;
-      }>;
-      style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
-      listItem?: "bullet" | "number";
-      markDefs: Array<{
-        linkType?: "href" | "page" | "post";
-        href?: string;
-        page: string | null;
-        post: string | null;
-        openInNewTab?: boolean;
-        _type: "link";
-        _key: string;
-      }> | null;
-      level?: number;
-      _type: "block";
-      _key: string;
-    }> | null;
-  }> | null;
-} | null;
-// Variable: sitemapData
-// Query: *[_type == "page" || _type == "post" && defined(slug.current)] | order(_type asc) {    "slug": slug.current,    _type,    _updatedAt,  }
-export type SitemapDataResult = Array<{
-  slug: string;
-  _type: "page";
-  _updatedAt: string;
-} | {
-  slug: string;
-  _type: "post";
-  _updatedAt: string;
-}>;
-// Variable: allPostsQuery
-// Query: *[_type == "post" && defined(slug.current)] | order(publishedAt desc, _updatedAt desc) {      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  featuredImage,  "date": coalesce(publishedAt, _updatedAt),  "author": author->{name, image, role},  }
-export type AllPostsQueryResult = Array<{
-  _id: string;
-  status: "draft" | "published";
-  title: string;
-  slug: string;
-  excerpt: string | null;
-  featuredImage: null;
-  date: string;
-  author: {
-    name: null;
-    image: null;
-    role: null;
-  } | null;
-}>;
-// Variable: morePostsQuery
-// Query: *[_type == "post" && _id != $skip && defined(slug.current)] | order(publishedAt desc, _updatedAt desc) [0...$limit] {      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  featuredImage,  "date": coalesce(publishedAt, _updatedAt),  "author": author->{name, image, role},  }
-export type MorePostsQueryResult = Array<{
-  _id: string;
-  status: "draft" | "published";
-  title: string;
-  slug: string;
-  excerpt: string | null;
-  featuredImage: null;
-  date: string;
-  author: {
-    name: null;
-    image: null;
-    role: null;
-  } | null;
-}>;
-// Variable: postQuery
-// Query: *[_type == "post" && slug.current == $slug] [0] {    content[]{    ...,    markDefs[]{      ...,        _type == "link" => {    "page": page->slug.current,    "post": post->slug.current  }    }  },      _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  featuredImage,  "date": coalesce(publishedAt, _updatedAt),  "author": author->{name, image, role},  }
-export type PostQueryResult = {
-  content: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
-    listItem?: "bullet" | "number";
-    markDefs: Array<{
-      linkType?: "href" | "page" | "post";
-      href?: string;
-      page: string | null;
-      post: string | null;
-      openInNewTab?: boolean;
-      _type: "link";
-      _key: string;
-    }> | null;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }> | null;
-  _id: string;
-  status: "draft" | "published";
-  title: string;
-  slug: string;
-  excerpt: string | null;
-  featuredImage: null;
-  date: string;
-  author: {
-    name: null;
-    image: null;
-    role: null;
-  } | null;
-} | null;
-// Variable: postPagesSlugs
-// Query: *[_type == "post" && defined(slug.current)]  {"slug": slug.current}
-export type PostPagesSlugsResult = Array<{
-  slug: string;
-}>;
-// Variable: pagesSlugs
-// Query: *[_type == "page" && defined(slug.current)]  {"slug": slug.current}
-export type PagesSlugsResult = Array<{
-  slug: string;
-}>;
+// Source: ./sanity/lib/certification-queries.ts
+// Variable: allCertificationsQuery
+// Query: *[_type == "certification"] | order(name asc) {    _id,    name,    "slug": slug.current,    description,    website,    category,    credibility,    "logo": logo {      asset->{        _id,        url      },      alt    },    "localizedContent": {      "en": localizedContent.en,      "fr": localizedContent.fr    }  }
+export type AllCertificationsQueryResult = Array<never>;
+// Variable: certificationBySlugQuery
+// Query: *[_type == "certification" && slug.current == $slug][0] {    _id,    name,    "slug": slug.current,    description,    website,    category,    credibility,    "logo": logo {      asset->{        _id,        url      },      alt    },    "localizedContent": {      "en": localizedContent.en,      "fr": localizedContent.fr    },    "criteria": criteria[] {      name,      description,      "localizedContent": {        "en": localizedContent.en,        "fr": localizedContent.fr      }    }  }
+export type CertificationBySlugQueryResult = null;
+// Variable: certificationsByCategoryQuery
+// Query: *[_type == "certification" && category == $category] | order(name asc) {    _id,    name,    "slug": slug.current,    description,    website,    category,    credibility,    "logo": logo {      asset->{        _id,        url      },      alt    },    "localizedContent": {      "en": localizedContent.en,      "fr": localizedContent.fr    }  }
+export type CertificationsByCategoryQueryResult = Array<never>;
+
+// Source: ./sanity/lib/metrics-queries.ts
+// Variable: metricsPageQuery
+// Query: *[_type == "metricsPage"][0] {    title,    description,    introduction,    "featuredMetrics": featuredMetrics[]-> {      _id,      name,      description,      "slug": slug.current,      "category": category-> {        name,        icon,        color      },      unit,      icon,      "benchmarks": benchmarks[] {        label,        value,        percentile,        color      }    },    "sections": sections[] {      title,      description,      layout,      backgroundColor,      "metrics": metrics[]-> {        _id,        name,        description,        "slug": slug.current,        "category": category-> {          name,          icon,          color        },        unit,        icon,        "benchmarks": benchmarks[] {          label,          value,          percentile,          color        }      }    },    metaTitle,    metaDescription  }
+export type MetricsPageQueryResult = null;
+// Variable: metricBySlugQuery
+// Query: *[_type == "metric" && slug.current == $slug][0] {    _id,    name,    description,    "slug": slug.current,    "category": category-> {      name,      icon,      color,      "slug": slug.current    },    unit,    icon,    importance,    detailedDescription,    methodology,    impactExplanation,    dataSource,    "benchmarks": benchmarks[] {      label,      value,      percentile,      color    },    industryAverage,    bestPractice,    "relatedMetrics": relatedMetrics[]-> {      _id,      name,      description,      "slug": slug.current,      "category": category-> {        name,        icon,        color      },      unit,      icon    },    "relatedContent": relatedContent[]-> {      _id,      title,      "slug": slug.current,      excerpt,      "featuredImage": featuredImage    }  }
+export type MetricBySlugQueryResult = null;
+// Variable: metricCategoriesQuery
+// Query: *[_type == "metricCategory"] | order(name asc) {    _id,    name,    description,    "slug": slug.current,    icon,    color,    "metricsCount": count(*[_type == "metric" && references(^._id)])  }
+export type MetricCategoriesQueryResult = Array<never>;
+// Variable: featuredMetricsQuery
+// Query: *[_type == "metric"] | order(importance desc) [0...4] {    _id,    name,    description,    "slug": slug.current,    "category": category-> {      name,      icon,      color    },    unit,    icon,    "benchmarks": benchmarks[] {      label,      value,      percentile,      color    }  }
+export type FeaturedMetricsQueryResult = Array<never>;
+// Variable: allMetricsQuery
+// Query: *[_type == "metric"] | order(name asc) {    _id,    name,    description,    "slug": slug.current,    "category": category-> {      name,      icon,      color,      "slug": slug.current    },    unit,    icon,    importance  }
+export type AllMetricsQueryResult = Array<never>;
+// Variable: metricsByCategoryQuery
+// Query: *[_type == "metric" && category._ref == $categoryId] | order(name asc) {    _id,    name,    description,    "slug": slug.current,    "category": category-> {      name,      icon,      color    },    unit,    icon,    "benchmarks": benchmarks[] {      label,      value,      percentile,      color    }  }
+export type MetricsByCategoryQueryResult = Array<never>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"settings\"][0]": SettingsQueryResult;
-    "\n  *[_type == 'page' && slug.current == $slug][0]{\n    _id,\n    _type,\n    name,\n    slug,\n    heading,\n    subheading,\n    \"pageBuilder\": pageBuilder[]{\n      ...,\n      _type == \"callToAction\" => {\n        \n  link {\n      ...,\n      \n  _type == \"link\" => {\n    \"page\": page->slug.current,\n    \"post\": post->slug.current\n  }\n\n      }\n,\n      },\n      _type == \"infoSection\" => {\n        content[]{\n          ...,\n          markDefs[]{\n            ...,\n            \n  _type == \"link\" => {\n    \"page\": page->slug.current,\n    \"post\": post->slug.current\n  }\n\n          }\n        }\n      },\n    },\n  }\n": GetPageQueryResult;
-    "\n  *[_type == \"page\" || _type == \"post\" && defined(slug.current)] | order(_type asc) {\n    \"slug\": slug.current,\n    _type,\n    _updatedAt,\n  }\n": SitemapDataResult;
-    "\n  *[_type == \"post\" && defined(slug.current)] | order(publishedAt desc, _updatedAt desc) {\n    \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  featuredImage,\n  \"date\": coalesce(publishedAt, _updatedAt),\n  \"author\": author->{name, image, role},\n\n  }\n": AllPostsQueryResult;
-    "\n  *[_type == \"post\" && _id != $skip && defined(slug.current)] | order(publishedAt desc, _updatedAt desc) [0...$limit] {\n    \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  featuredImage,\n  \"date\": coalesce(publishedAt, _updatedAt),\n  \"author\": author->{name, image, role},\n\n  }\n": MorePostsQueryResult;
-    "\n  *[_type == \"post\" && slug.current == $slug] [0] {\n    content[]{\n    ...,\n    markDefs[]{\n      ...,\n      \n  _type == \"link\" => {\n    \"page\": page->slug.current,\n    \"post\": post->slug.current\n  }\n\n    }\n  },\n    \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  featuredImage,\n  \"date\": coalesce(publishedAt, _updatedAt),\n  \"author\": author->{name, image, role},\n\n  }\n": PostQueryResult;
-    "\n  *[_type == \"post\" && defined(slug.current)]\n  {\"slug\": slug.current}\n": PostPagesSlugsResult;
-    "\n  *[_type == \"page\" && defined(slug.current)]\n  {\"slug\": slug.current}\n": PagesSlugsResult;
+    "\n  *[_type == \"certification\"] | order(name asc) {\n    _id,\n    name,\n    \"slug\": slug.current,\n    description,\n    website,\n    category,\n    credibility,\n    \"logo\": logo {\n      asset->{\n        _id,\n        url\n      },\n      alt\n    },\n    \"localizedContent\": {\n      \"en\": localizedContent.en,\n      \"fr\": localizedContent.fr\n    }\n  }\n": AllCertificationsQueryResult;
+    "\n  *[_type == \"certification\" && slug.current == $slug][0] {\n    _id,\n    name,\n    \"slug\": slug.current,\n    description,\n    website,\n    category,\n    credibility,\n    \"logo\": logo {\n      asset->{\n        _id,\n        url\n      },\n      alt\n    },\n    \"localizedContent\": {\n      \"en\": localizedContent.en,\n      \"fr\": localizedContent.fr\n    },\n    \"criteria\": criteria[] {\n      name,\n      description,\n      \"localizedContent\": {\n        \"en\": localizedContent.en,\n        \"fr\": localizedContent.fr\n      }\n    }\n  }\n": CertificationBySlugQueryResult;
+    "\n  *[_type == \"certification\" && category == $category] | order(name asc) {\n    _id,\n    name,\n    \"slug\": slug.current,\n    description,\n    website,\n    category,\n    credibility,\n    \"logo\": logo {\n      asset->{\n        _id,\n        url\n      },\n      alt\n    },\n    \"localizedContent\": {\n      \"en\": localizedContent.en,\n      \"fr\": localizedContent.fr\n    }\n  }\n": CertificationsByCategoryQueryResult;
+    "\n  *[_type == \"metricsPage\"][0] {\n    title,\n    description,\n    introduction,\n    \"featuredMetrics\": featuredMetrics[]-> {\n      _id,\n      name,\n      description,\n      \"slug\": slug.current,\n      \"category\": category-> {\n        name,\n        icon,\n        color\n      },\n      unit,\n      icon,\n      \"benchmarks\": benchmarks[] {\n        label,\n        value,\n        percentile,\n        color\n      }\n    },\n    \"sections\": sections[] {\n      title,\n      description,\n      layout,\n      backgroundColor,\n      \"metrics\": metrics[]-> {\n        _id,\n        name,\n        description,\n        \"slug\": slug.current,\n        \"category\": category-> {\n          name,\n          icon,\n          color\n        },\n        unit,\n        icon,\n        \"benchmarks\": benchmarks[] {\n          label,\n          value,\n          percentile,\n          color\n        }\n      }\n    },\n    metaTitle,\n    metaDescription\n  }\n": MetricsPageQueryResult;
+    "\n  *[_type == \"metric\" && slug.current == $slug][0] {\n    _id,\n    name,\n    description,\n    \"slug\": slug.current,\n    \"category\": category-> {\n      name,\n      icon,\n      color,\n      \"slug\": slug.current\n    },\n    unit,\n    icon,\n    importance,\n    detailedDescription,\n    methodology,\n    impactExplanation,\n    dataSource,\n    \"benchmarks\": benchmarks[] {\n      label,\n      value,\n      percentile,\n      color\n    },\n    industryAverage,\n    bestPractice,\n    \"relatedMetrics\": relatedMetrics[]-> {\n      _id,\n      name,\n      description,\n      \"slug\": slug.current,\n      \"category\": category-> {\n        name,\n        icon,\n        color\n      },\n      unit,\n      icon\n    },\n    \"relatedContent\": relatedContent[]-> {\n      _id,\n      title,\n      \"slug\": slug.current,\n      excerpt,\n      \"featuredImage\": featuredImage\n    }\n  }\n": MetricBySlugQueryResult;
+    "\n  *[_type == \"metricCategory\"] | order(name asc) {\n    _id,\n    name,\n    description,\n    \"slug\": slug.current,\n    icon,\n    color,\n    \"metricsCount\": count(*[_type == \"metric\" && references(^._id)])\n  }\n": MetricCategoriesQueryResult;
+    "\n  *[_type == \"metric\"] | order(importance desc) [0...4] {\n    _id,\n    name,\n    description,\n    \"slug\": slug.current,\n    \"category\": category-> {\n      name,\n      icon,\n      color\n    },\n    unit,\n    icon,\n    \"benchmarks\": benchmarks[] {\n      label,\n      value,\n      percentile,\n      color\n    }\n  }\n": FeaturedMetricsQueryResult;
+    "\n  *[_type == \"metric\"] | order(name asc) {\n    _id,\n    name,\n    description,\n    \"slug\": slug.current,\n    \"category\": category-> {\n      name,\n      icon,\n      color,\n      \"slug\": slug.current\n    },\n    unit,\n    icon,\n    importance\n  }\n": AllMetricsQueryResult;
+    "\n  *[_type == \"metric\" && category._ref == $categoryId] | order(name asc) {\n    _id,\n    name,\n    description,\n    \"slug\": slug.current,\n    \"category\": category-> {\n      name,\n      icon,\n      color\n    },\n    unit,\n    icon,\n    \"benchmarks\": benchmarks[] {\n      label,\n      value,\n      percentile,\n      color\n    }\n  }\n": MetricsByCategoryQueryResult;
   }
 }

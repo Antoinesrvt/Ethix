@@ -1,96 +1,38 @@
-import "./globals.css";
-
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import "@/app/globals.css";
+import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { VisualEditing, toPlainText } from "next-sanity";
-import { Toaster } from "sonner";
 
-import DraftModeToast from "@/app/components/DraftModeToast";
-import Footer from "@/app/components/landing/Footer";
+import { defaultLocale } from "@/i18n";
+import { initServerTranslations } from "@/i18n/init";
+
 import Header from "@/app/components/landing/Header";
-import * as demo from "@/sanity/lib/demo";
-import { sanityFetch, SanityLive } from "@/sanity/lib/live";
-import { settingsQuery } from "@/sanity/lib/queries";
-import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import { handleError } from "./client-utils";
+import Footer from "@/app/components/landing/Footer";
 
 /**
- * Generate metadata for the page.
- * Learn more: https://nextjs.org/docs/app/api-reference/functions/generate-metadata#generatemetadata-function
+ * Generate metadata for the page
  */
-export async function generateMetadata(): Promise<Metadata> {
-  const { data: settings } = await sanityFetch({
-    query: settingsQuery,
-    // Metadata should never contain stega
-    stega: false,
-  });
-  const title = settings?.title || demo.title;
-  const description = settings?.description || demo.description;
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Ethix',
+    default: 'Ethix | Ethical Consumer Platform',
+  },
+  description: 'Find ethically-made, sustainable products and their verified impact data all in one place.',
+};
 
-  const ogImage = resolveOpenGraphImage(settings?.ogImage);
-  let metadataBase: URL | undefined = undefined;
-  try {
-    metadataBase = settings?.ogImage?.metadataBase
-      ? new URL(settings.ogImage.metadataBase)
-      : undefined;
-  } catch {
-    // ignore
-  }
-  return {
-    metadataBase,
-    title: {
-      template: `%s | ${title}`,
-      default: title,
-    },
-    description: toPlainText(description),
-    openGraph: {
-      images: ogImage ? [ogImage] : [],
-    },
-  };
-}
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  display: "swap",
-});
-
+/**
+ * Root layout component
+ */
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Initialize translations for server components
+  await initServerTranslations(defaultLocale);
+  
+  // Get draft mode status
   const { isEnabled: isDraftMode } = await draftMode();
 
-  return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
-      <body className="bg-snow text-charcoal font-sans min-h-screen overflow-x-hidden flex flex-col">
-        <section className="min-h-screen flex flex-col flex-grow pt-24">
-          {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
-          <Toaster />
-          {isDraftMode && (
-            <>
-              <DraftModeToast />
-              {/*  Enable Visual Editing, only to be rendered when Draft Mode is enabled */}
-              <VisualEditing />
-            </>
-          )}
-          {/* The <SanityLive> component is responsible for making all sanityFetch calls in your application live, so should always be rendered. */}
-          <SanityLive onError={handleError} />
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </section>
-        <SpeedInsights />
-      </body>
-    </html>
-  );
+  // We only render the children here and let the locale-specific layout handle the HTML structure
+  return children;
 }

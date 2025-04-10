@@ -1,38 +1,41 @@
 import Image from 'next/image';
+import { t } from '@/i18n/server';
 
-const testimonials = [
-  {
-    quote: "ChooseBetter has completely changed how I shop. I can now easily find products that align with my environmental values.",
-    name: "Sophie Martinez",
-    title: "Sustainability Advocate",
-    avatar: "/images/testimonial-1.jpg" // Placeholder - replace with actual path
-  },
-  {
-    quote: "I've been looking for a tool like this for years. The impact metrics make it easy to compare products and make better choices.",
-    name: "David Chen",
-    title: "Conscious Consumer",
-    avatar: "/images/testimonial-2.jpg" // Placeholder - replace with actual path
-  },
-  {
-    quote: "As someone who cares about ethical production, this platform has been invaluable in helping me support companies with fair labor practices.",
-    name: "Aisha Johnson",
-    title: "Ethical Shopping Enthusiast",
-    avatar: "/images/testimonial-3.jpg" // Placeholder - replace with actual path
-  }
-];
+type Testimonial = {
+  quote: string;
+  name: string;
+  title: string;
+  avatar?: string;
+};
 
 export default function Testimonials() {
+  // Get translations
+  const title = t('testimonials.title');
+  const subtitle = t('testimonials.subtitle');
+  const trustedBy = t('testimonials.trusted_by');
+  
+  // Replace <em> tags with styled spans for server rendering
+  const titleHtml = title.replace(/<em>(.*?)<\/em>/g, 
+    '<span class="text-earth-green">$1</span>');
+  
+  // Get testimonials from translation file - need to cast properly for TS
+  const testimonialsRaw = t('testimonials.items', { returnObjects: true as any });
+  const testimonials = Array.isArray(testimonialsRaw) 
+    ? testimonialsRaw as Testimonial[]
+    : [] as Testimonial[];
+  
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-snow to-transparent z-0"></div>
       
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-charcoal">
-            What Our <span className="text-earth-green">Community</span> Says
-          </h2>
+          <h2 
+            className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-charcoal"
+            dangerouslySetInnerHTML={{ __html: titleHtml }}
+          />
           <p className="text-slate text-lg">
-            Join thousands of people who are making more conscious purchasing decisions with our platform.
+            {subtitle}
           </p>
         </div>
         
@@ -71,7 +74,7 @@ export default function Testimonials() {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
-            <span className="text-sm font-medium">Trusted by 50,000+ users worldwide</span>
+            <span className="text-sm font-medium">{trustedBy}</span>
           </div>
         </div>
       </div>
