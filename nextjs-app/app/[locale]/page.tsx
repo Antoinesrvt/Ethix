@@ -9,6 +9,7 @@ import Testimonials from "../components/landing/Testimonials";
 import ImpactMetrics from "../components/landing/ImpactMetrics";
 import CallToAction from "../components/landing/CallToAction";
 import { AllPosts } from "@/app/components/Posts";
+import ProductComparison from "../components/landing/ProductComparison";
 
 // Type definition for page props
 type Props = {
@@ -30,19 +31,21 @@ export default async function Home({ params }: Props) {
     <>
       {/* Hero Section */}
       <Hero />
-      
+
       {/* Partners Section */}
       {/* <Partners /> */}
-      
+
       {/* Features Section */}
       <Features />
-      
+
       {/* Testimonials Section */}
       <Testimonials />
-      
+
+      <ProductComparison />
+
       {/* Impact Metrics Section */}
       <ImpactMetrics />
-      
+
       {/* Blog Posts Section */}
       <section className="py-16 md:py-24 bg-white border-t border-light-gray">
         <div className="container">
@@ -51,16 +54,17 @@ export default async function Home({ params }: Props) {
               Latest from Our <span className="text-earth-green">Blog</span>
             </h2>
             <p className="text-slate text-lg">
-              Discover insights, guides, and news on ethical consumption and sustainable living.
+              Discover insights, guides, and news on ethical consumption and
+              sustainable living.
             </p>
           </div>
-          
+
           <Suspense>
             <AllPosts />
           </Suspense>
         </div>
       </section>
-      
+
       {/* Call to Action Section */}
       <CallToAction />
     </>

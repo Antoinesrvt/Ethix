@@ -36,6 +36,53 @@
       "data": "Verified Data Sources"
     }
   },
+  "product_comparison": {
+    "interactive": "Interactive",
+    "title": "Product Comparison",
+    "subtitle": "Compare products side by side to see how they stack up across different sustainability and ethical metrics.",
+    "select_products": "Select products to compare",
+    "all_metrics": "All Metrics",
+    "metric": "Metric",
+    "sustainability_score": "Sustainability Score",
+    "sustainability_score_tooltip": "Overall score based on environmental, social, and ethical factors on a scale of 1-10",
+    "out_of_10": "out of 10",
+    "price": "Price",
+    "actions": "Actions",
+    "view_details": "View Details",
+    "see_more": "See more detailed comparisons",
+    "add_to_compare": "Add to comparison"
+  },
+  "product_impact": {
+    "example_analysis": "Example Analysis",
+    "product_impact": "Product Impact",
+    "eco_friendly": "Eco-Friendly T-Shirt",
+    "category": "Sustainable Fashion",
+    "verified_data": "Based on verified data from multiple sources",
+    "view": "View →",
+    "how_calculated": "How are these metrics calculated?",
+    "metrics": {
+      "carbon_footprint": {
+        "name": "Carbon Footprint",
+        "tooltip": "Measures the total greenhouse gas emissions caused during the product's lifecycle, expressed in CO2 equivalent.",
+        "excellent": "Excellent"
+      },
+      "water_usage": {
+        "name": "Water Usage",
+        "tooltip": "The amount of water required to produce the product from raw materials to finished product, measured in liters.",
+        "good": "Good"
+      },
+      "labor_conditions": {
+        "name": "Labor Conditions",
+        "tooltip": "Assessment of working conditions, fair wages, and ethical labor practices in the supply chain.",
+        "average": "Average"
+      },
+      "end_of_life": {
+        "name": "End of Life",
+        "tooltip": "How recyclable, biodegradable, or reusable the product is after its useful life.",
+        "poor": "Poor"
+      }
+    }
+  },
   "features": {
     "title": "Empowering You to Make <em>Better Choices</em>",
     "subtitle": "Our platform provides the tools and information you need to align your purchasing decisions with your values.",
@@ -168,38 +215,6 @@
     "coming_soon": "Product listings coming soon",
     "verified": "Verified",
     "more_info": "More Information"
-  },
-  "product_impact": {
-    "example_analysis": "Example Analysis",
-    "product_impact": "Product Impact",
-    "eco_friendly": "Eco-Friendly T-Shirt",
-    "category": "Sustainable Fashion",
-    "verified_data": "Based on verified data from multiple sources",
-    "metrics": {
-      "carbon_footprint": {
-        "name": "Carbon Footprint",
-        "tooltip": "Measures the total greenhouse gas emissions caused during the product's lifecycle, expressed in CO2 equivalent.",
-        "excellent": "Excellent"
-      },
-      "water_usage": {
-        "name": "Water Usage",
-        "tooltip": "The amount of water required to produce the product from raw materials to finished product, measured in liters.",
-        "good": "Good"
-      },
-      "labor_conditions": {
-        "name": "Labor Conditions",
-        "tooltip": "Assessment of working conditions, fair wages, and ethical labor practices in the supply chain.",
-        "average": "Average"
-      },
-      "end_of_life": {
-        "name": "End of Life",
-        "tooltip": "How recyclable, biodegradable, or reusable the product is after its useful life.",
-        "poor": "Poor"
-      }
-    },
-    "alternative": "Alternative Suggestion",
-    "view": "View →",
-    "how_calculated": "How are these ratings calculated?"
   },
   "footer": {
     "about_description": "Empowering consumers with transparent information about environmental and social impacts to guide better purchasing decisions.",

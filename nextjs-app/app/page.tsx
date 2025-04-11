@@ -3,9 +3,11 @@ import { initServerTranslations } from "@/i18n/init";
 import { defaultLocale } from "@/i18n";
 
 import Hero from "./components/landing/Hero";
+import Partners from "./components/landing/Partners";
 import Features from "./components/landing/Features";
 import Testimonials from "./components/landing/Testimonials";
 import ImpactMetrics from "./components/landing/ImpactMetrics";
+import ProductComparison from "./components/landing/ProductComparison";
 import CallToAction from "./components/landing/CallToAction";
 import { AllPosts } from "@/app/components/Posts";
 
@@ -21,6 +23,9 @@ export default async function HomePage() {
       {/* Hero Section */}
       <Hero />
       
+      {/* Partners Section */}
+      <Partners />
+      
       {/* Features Section */}
       <Features />
       
@@ -29,6 +34,9 @@ export default async function HomePage() {
       
       {/* Impact Metrics Section */}
       <ImpactMetrics />
+      
+      {/* Product Comparison Section */}
+      <ProductComparison />
       
       {/* Blog Posts Section */}
       <section className="py-16 md:py-24 bg-white border-t border-light-gray">

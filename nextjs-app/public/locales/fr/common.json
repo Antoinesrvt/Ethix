@@ -156,37 +156,53 @@
     "certification_subtitle": "Nous travaillons avec ces normes de certification pour valider les allégations environnementales et sociales",
     "see_all": "Voir tous nos partenaires"
   },
+  "product_comparison": {
+    "interactive": "Interactive",
+    "title": "Comparaison de Produits",
+    "subtitle": "Comparez les produits côte à côte pour voir comment ils se classent selon différents critères de durabilité et d'éthique.",
+    "select_products": "Sélectionnez des produits à comparer",
+    "all_metrics": "Tous les Indicateurs",
+    "metric": "Indicateur",
+    "sustainability_score": "Score de Durabilité",
+    "sustainability_score_tooltip": "Score global basé sur des facteurs environnementaux, sociaux et éthiques sur une échelle de 1 à 10",
+    "out_of_10": "sur 10",
+    "price": "Prix",
+    "actions": "Actions",
+    "view_details": "Voir les Détails",
+    "see_more": "Voir plus de comparaisons détaillées",
+    "add_to_compare": "Ajouter à la comparaison"
+  },
   "product_impact": {
-    "example_analysis": "Exemple d'analyse",
-    "product_impact": "Impact du produit",
-    "eco_friendly": "T-shirt écologique",
-    "category": "Mode durable",
+    "example_analysis": "Exemple d'Analyse",
+    "product_impact": "Impact du Produit",
+    "eco_friendly": "T-shirt Écologique",
+    "category": "Mode Durable",
     "verified_data": "Basé sur des données vérifiées provenant de sources multiples",
+    "view": "Voir →",
+    "how_calculated": "Comment ces indicateurs sont-ils calculés?",
     "metrics": {
       "carbon_footprint": {
-        "name": "Empreinte carbone",
+        "name": "Empreinte Carbone",
         "tooltip": "Mesure les émissions totales de gaz à effet de serre causées pendant le cycle de vie du produit, exprimées en équivalent CO2.",
         "excellent": "Excellent"
       },
       "water_usage": {
-        "name": "Utilisation d'eau",
+        "name": "Utilisation d'Eau",
         "tooltip": "La quantité d'eau nécessaire pour produire le produit des matières premières au produit fini, mesurée en litres.",
         "good": "Bon"
       },
       "labor_conditions": {
-        "name": "Conditions de travail",
+        "name": "Conditions de Travail",
         "tooltip": "Évaluation des conditions de travail, des salaires équitables et des pratiques de travail éthiques dans la chaîne d'approvisionnement.",
         "average": "Moyen"
       },
       "end_of_life": {
-        "name": "Fin de vie",
-        "tooltip": "Comment le produit est recyclable, biodégradable ou réutilisable après sa durée de vie utile.",
+        "name": "Fin de Vie",
+        "tooltip": "Dans quelle mesure le produit est recyclable, biodégradable ou réutilisable après sa vie utile.",
         "poor": "Médiocre"
       }
     },
-    "alternative": "Suggestion alternative",
-    "view": "Voir →",
-    "how_calculated": "Comment ces évaluations sont-elles calculées ?"
+    "alternative": "Suggestion alternative"
   },
   "footer": {
     "about_description": "Donnons aux consommateurs des informations transparentes sur les impacts environnementaux et sociaux pour guider des décisions d'achat plus éclairées.",
