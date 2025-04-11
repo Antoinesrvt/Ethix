@@ -470,5 +470,18 @@
       "explore_button": "Explorer les Produits",
       "learn_button": "En Savoir Plus sur Nos Métriques"
     }
+  },
+  "certifications": {
+    "credibility": "Crédibilité",
+    "official_website": "Site Officiel",
+    "about": "À propos de cette Certification",
+    "criteria_title": "Critères de Certification",
+    "collapse_all": "Tout Replier",
+    "expand_all": "Tout Développer",
+    "products_with_certification": "Produits avec cette Certification",
+    "products_description": "Découvrez des produits qui répondent aux normes établies par cette certification.",
+    "coming_soon": "Listes de produits à venir",
+    "verified": "Vérifié",
+    "more_info": "Plus d'informations"
   }
 } 

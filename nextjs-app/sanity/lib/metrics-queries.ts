@@ -55,7 +55,7 @@ export const metricsPageQuery = defineQuery(`
   }
 `);
 
-// Query for a single metric by slug
+// Query for a single metric by slug - this is being used as metricBySlugQuery
 export const metricBySlugQuery = defineQuery(`
   *[_type == "metric" && slug.current == $slug][0] {
     _id,
@@ -102,6 +102,57 @@ export const metricBySlugQuery = defineQuery(`
       "slug": slug.current,
       excerpt,
       "featuredImage": featuredImage
+    }
+  }
+`);
+
+// Also export this query as metricQuery since that's what's being used in the page
+export const metricQuery = defineQuery(`
+  *[_type == "metric" && slug.current == $slug][0] {
+    _id,
+    name,
+    description,
+    "slug": slug.current,
+    "category": category-> {
+      name,
+      icon,
+      color,
+      "slug": slug.current
+    },
+    unit,
+    icon,
+    what,
+    why,
+    howWeMeasure,
+    industryStats,
+    "benchmarks": benchmarks[] {
+      label,
+      value,
+      percentile,
+      color
+    },
+    consumerTips,
+    "relatedMetrics": relatedMetrics[]-> {
+      _id,
+      name,
+      description,
+      "slug": slug.current,
+      "category": category-> {
+        name,
+        icon,
+        color
+      },
+      unit,
+      icon
+    }
+  }
+`);
+
+// Query to get all metric slugs for generateStaticParams
+export const metricPagesSlugs = defineQuery(`
+  *[_type == "metric"] {
+    'params': {
+      'metric': slug.current
     }
   }
 `);

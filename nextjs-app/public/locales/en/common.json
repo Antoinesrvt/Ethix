@@ -156,6 +156,19 @@
     "certification_subtitle": "We work with these certification standards to validate environmental and social claims",
     "see_all": "See all our partners"
   },
+  "certifications": {
+    "credibility": "Credibility",
+    "official_website": "Official Website",
+    "about": "About this Certification",
+    "criteria_title": "Certification Criteria",
+    "collapse_all": "Collapse All",
+    "expand_all": "Expand All",
+    "products_with_certification": "Products with this Certification",
+    "products_description": "Discover products that meet the standards set by this certification.",
+    "coming_soon": "Product listings coming soon",
+    "verified": "Verified",
+    "more_info": "More Information"
+  },
   "product_impact": {
     "example_analysis": "Example Analysis",
     "product_impact": "Product Impact",

@@ -8,7 +8,7 @@ export default function HeroTitle() {
       <Trans 
         i18nKey="hero.title"
         components={{
-          em: <em className="text-earth-green" />
+          em: <em className="text-earth-green" key="em" />
         }}
       />
     </h1>

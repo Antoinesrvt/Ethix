@@ -68,6 +68,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Fetch translations from Sanity
+async function fetchTranslations(locale: string) {
+  const query = `*[_type == "translation" && language == $language][0]{
+    "translations": content
+  }`;
+
+  try {
+    const result = await client.fetch(query, { language: locale });
+    if (result && result.translations) {
+      return result.translations;
+    }
+    
+    // Fallback to default locale if translation is not available
+    if (locale !== defaultLocale) {
+      const fallbackResult = await client.fetch(query, { language: defaultLocale });
+      if (fallbackResult && fallbackResult.translations) {
+        return fallbackResult.translations;
+      }
+    }
+    
+    return {};
+  } catch (error) {
+    console.error("Failed to fetch translations:", error);
+    return {};
+  }
+}
+
 /**
  * Root layout component
  */
@@ -91,11 +118,14 @@ export default async function RootLayout({
   
   // Initialize translations for server-side rendering
   await initServerTranslations(locale);
+  
+  // Fetch Sanity translations
+  const translations = await fetchTranslations(locale);
 
   return (
     <html lang={locale}>
       <body className="flex flex-col min-h-screen bg-white text-charcoal antialiased">
-        <Providers locale={locale}>
+        <Providers locale={locale} initialTranslations={translations}>
           <Header />
           <main className="flex-grow bg-white pt-16">
             {children}
